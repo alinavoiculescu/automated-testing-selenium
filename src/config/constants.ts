@@ -1,2 +1,11 @@
-export const INVALID_USERNAME = 'invalid-username';
-export const INVALID_PASSWORD = 'invalid-password';
+export const EMPTY_STRING = '';
+export const INVALID_USERNAME = 'invalid_username';
+export const INVALID_PASSWORD = 'invalid_password';
+export const LOCKED_OUT_USERNAME = 'locked_out_user';
+export const LOGIN_INVALID_ERROR = 'Username and password do not match any user in this service';
+export const USER_LOCKED_OUT_ERROR = 'Sorry, this user has been locked out';
+export const REQUIRED_USERNAME_ERROR = 'Username is required';
+export const REQUIRED_PASSWORD_ERROR = 'Password is required';
+export const PRODUCTS_PAGE_ROUTE = 'inventory.html';
+export const CART_PAGE_ROUTE = 'cart.html';
+export const ABOUT_PAGE_URL = 'https://saucelabs.com/';

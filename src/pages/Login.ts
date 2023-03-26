@@ -1,18 +1,17 @@
 import { WebDriver, By, until } from 'selenium-webdriver';
 import { Page } from '../utils/pages/Page';
 import { BrowserWrapper } from '../utils/wrappers/browser/BrowserWrapper';
-import { SeleniumWrappers } from '../utils/wrappers/selenium/SeleniumWrappers';
 
 export class Login extends Page {
     fieldUsername: By;
     fieldPassword: By;
     buttonLogin: By;
+    errorMessage: By;
     webDriver: WebDriver;
 
     constructor(browserWrapper: BrowserWrapper) {
         super(browserWrapper);
         this.webDriver = browserWrapper.webDriver;
-        this.seleniumWrappers = new SeleniumWrappers(this.webDriver);
         this.initElements();
     }
 
@@ -20,6 +19,7 @@ export class Login extends Page {
         this.fieldUsername = By.css('#user-name');
         this.fieldPassword = By.css('#password');
         this.buttonLogin = By.css('#login-button');
+        this.errorMessage = By.css('.error-message-container');
     }
 
     public async setUsername(username: string) {

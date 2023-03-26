@@ -3,15 +3,21 @@ import { SeleniumWrappers } from '../wrappers/selenium/SeleniumWrappers';
 import { BrowserWrapper } from '../wrappers/browser/BrowserWrapper';
 import { Login } from '../../pages/Login';
 import { ThenableWebDriver } from 'selenium-webdriver';
+import { NavigationMenu } from '../../pages/shared/NavigationMenu';
+import { Footer } from '../../pages/shared/Footer';
 
 export class AllPages {
     public login: Login;
+    public navigationMenu: NavigationMenu;
+    public footer: Footer;
 
     public seleniumWrappers: SeleniumWrappers;
 
     constructor(public browserWrapper: BrowserWrapper) {
         this.seleniumWrappers = new SeleniumWrappers(browserWrapper.webDriver);
         this.login = new Login(browserWrapper);
+        this.navigationMenu = new NavigationMenu(browserWrapper);
+        this.footer = new Footer(browserWrapper);
     }
 
     public getWebDriver() {
