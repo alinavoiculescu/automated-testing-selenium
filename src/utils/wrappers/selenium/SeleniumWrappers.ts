@@ -36,7 +36,7 @@ export class SeleniumWrappers {
     }
 
     public async scrollToElement(element: WebElementPromise | WebElement): Promise<void> {
-        this.webDriver.executeScript('arguments[0].scrollIntoView();', element);
+        await this.webDriver.executeScript('arguments[0].scrollIntoView();', element);
     }
 
     public async doubleClick(element: WebElementPromise | WebElement): Promise<void> {
