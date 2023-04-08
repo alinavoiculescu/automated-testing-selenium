@@ -42,23 +42,91 @@ describe('Products page tests', function () {
         assert(await allPages.products.verifyProductsDisplayedAndVisible(), 'Expected to display all products');
     });
 
-    /*
-  let browserWrapper: BrowserWrapper;
-  let loginPage: Login;
-  let productsPage: Products;
+    it('All products are successfully sorted alphabetically in ascending order when "Name (A to Z)" is selected', async function () {
+        const productNames: string[] = await allPages.products.getProductNames();
+        const sortedProductNames: string[] = [...productNames].sort();
 
-  beforeAll(async () => {
-    browserWrapper = new BrowserWrapper();
-    loginPage = new Login(browserWrapper);
-    productsPage = new Products(browserWrapper);
-    await loginPage.navigateTo();
-    await loginPage.login('username', 'password');
-  });
+        await allPages.products.sortProductsByNameAsc();
+        await seleniumWrappers.waitForPageToLoad();
 
-  it('should scroll down to see all products', async () => {
-    await productsPage.navigateTo();
-    await productsPage.scrollDown();
-    expect(await productsPage.verifyProductsDisplayed()).toBeTruthy();
-  });
-  */
+        const sortedProductNamesDisplayed: string[] = await allPages.products.getProductNames();
+
+        assert.deepEqual(
+            sortedProductNamesDisplayed,
+            sortedProductNames,
+            'Expected the products to be sorted alphabetically in ascending order',
+        );
+        assert(await allPages.products.verifyProductsDisplayedAndVisible(), 'Expected to display all products');
+        await allPages.products.scrollDown();
+        assert(
+            await allPages.products.verifyProductsDisplayedAndVisible(),
+            'Expected to display all products after scrolling',
+        );
+    });
+
+    it('All products are successfully sorted alphabetically in descending order when "Name (Z to A)" is selected', async function () {
+        const productNames: string[] = await allPages.products.getProductNames();
+        const sortedProductNames: string[] = [...productNames].sort((a, b) => b.localeCompare(a));
+
+        await allPages.products.sortProductsByNameDesc();
+        await seleniumWrappers.waitForPageToLoad();
+
+        const sortedProductNamesDisplayed: string[] = await allPages.products.getProductNames();
+
+        assert.deepEqual(
+            sortedProductNamesDisplayed,
+            sortedProductNames,
+            'Expected the products to be sorted alphabetically in descending order',
+        );
+        assert(await allPages.products.verifyProductsDisplayedAndVisible(), 'Expected to display all products');
+        await allPages.products.scrollDown();
+        assert(
+            await allPages.products.verifyProductsDisplayedAndVisible(),
+            'Expected to display all products after scrolling',
+        );
+    });
+
+    it('All products are successfully sorted ascending by price when "Price (low to high)" is selected', async function () {
+        const productPrices: number[] = await allPages.products.getProductPrices();
+        const sortedProductPrices: number[] = [...productPrices].sort((a, b) => a - b);
+
+        await allPages.products.sortProductsByPriceAsc();
+        await seleniumWrappers.waitForPageToLoad();
+
+        const sortedProductPricesDisplayed: number[] = await allPages.products.getProductPrices();
+
+        assert.deepEqual(
+            sortedProductPricesDisplayed,
+            sortedProductPrices,
+            'Expected the products to be sorted by price in ascending order',
+        );
+        assert(await allPages.products.verifyProductsDisplayedAndVisible(), 'Expected to display all products');
+        await allPages.products.scrollDown();
+        assert(
+            await allPages.products.verifyProductsDisplayedAndVisible(),
+            'Expected to display all products after scrolling',
+        );
+    });
+
+    it('All products are successfuly sorted descending by price when "Price (high to low)" is selected', async function () {
+        const productPrices: number[] = await allPages.products.getProductPrices();
+        const sortedProductPrices: number[] = [...productPrices].sort((a, b) => b - a);
+
+        await allPages.products.sortProductsByPriceDesc();
+        await seleniumWrappers.waitForPageToLoad();
+
+        const sortedProductPricesDisplayed: number[] = await allPages.products.getProductPrices();
+
+        assert.deepEqual(
+            sortedProductPricesDisplayed,
+            sortedProductPrices,
+            'Expected the products to be sorted by price in descending order',
+        );
+        assert(await allPages.products.verifyProductsDisplayedAndVisible(), 'Expected to display all products');
+        await allPages.products.scrollDown();
+        assert(
+            await allPages.products.verifyProductsDisplayedAndVisible(),
+            'Expected to display all products after scrolling',
+        );
+    });
 });
