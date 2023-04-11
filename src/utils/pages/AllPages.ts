@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { config } from '../../config/config';
 import { SeleniumWrappers } from '../wrappers/selenium/SeleniumWrappers';
 import { BrowserWrapper } from '../wrappers/browser/BrowserWrapper';
@@ -6,12 +7,14 @@ import { ThenableWebDriver } from 'selenium-webdriver';
 import { NavigationMenu } from '../../pages/shared/NavigationMenu';
 import { Footer } from '../../pages/shared/Footer';
 import { Products } from '../../pages/Products';
+import { ProductDetails } from '../../pages/ProductDetails';
 
 export class AllPages {
     public login: Login;
     public navigationMenu: NavigationMenu;
     public footer: Footer;
     public products: Products;
+    public productDetails: ProductDetails;
 
     public seleniumWrappers: SeleniumWrappers;
 
@@ -21,6 +24,7 @@ export class AllPages {
         this.navigationMenu = new NavigationMenu(browserWrapper);
         this.footer = new Footer(browserWrapper);
         this.products = new Products(browserWrapper);
+        this.productDetails = new ProductDetails(browserWrapper);
     }
 
     public getWebDriver() {

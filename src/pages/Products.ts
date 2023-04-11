@@ -6,6 +6,11 @@ import { BrowserWrapper } from '../utils/wrappers/browser/BrowserWrapper';
 export class Products extends Page {
     productList: By;
     items: By;
+    productName: By;
+    productPrice: By;
+    productDescription: By;
+    productImage: By;
+    productButton: By;
     webDriver: WebDriver;
     sortDropdown: By;
     sortOptionNameAsc: By;
@@ -22,6 +27,11 @@ export class Products extends Page {
     private initElements() {
         this.productList = By.css('.inventory_list');
         this.items = By.css('.inventory_item');
+        this.productName = By.css('.inventory_item_name');
+        this.productPrice = By.css('.inventory_item_price');
+        this.productDescription = By.css('.inventory_item_desc');
+        this.productImage = By.css('img.inventory_item_img');
+        this.productButton = By.css('.btn_inventory');
         this.sortDropdown = By.css('.product_sort_container');
         this.sortOptionNameAsc = By.css('option[value="az"]');
         this.sortOptionNameDesc = By.css('option[value="za"]');
@@ -59,7 +69,7 @@ export class Products extends Page {
         const names: string[] = [];
 
         for (let i = 0; i < items.length; i++) {
-            const name = await items[i].findElement(By.css('.inventory_item_name')).getText();
+            const name = await (await items[i].findElement(this.productName)).getText();
             names.push(name);
         }
 
@@ -73,12 +83,83 @@ export class Products extends Page {
         const prices: number[] = [];
 
         for (let i = 0; i < items.length; i++) {
-            const priceString = await items[i].findElement(By.css('.inventory_item_price')).getText();
+            const priceString = await (await items[i].findElement(this.productPrice)).getText();
             const price = parseFloat(priceString.replace('$', ''));
             prices.push(price);
         }
 
         return prices;
+    }
+
+    public async getProductDescriptionByName(productName: string) {
+        const productList = await this.webDriver.findElement(this.productList);
+        const items = await productList.findElements(this.items);
+
+        for (let i = 0; i < items.length; i++) {
+            const name = await (await items[i].findElement(this.productName)).getText();
+            if (name === productName) {
+                const description = await (await items[i].findElement(By.css('.inventory_item_desc'))).getText();
+                return description;
+            }
+        }
+
+        throw new Error(`Product with name '${productName}' not found`);
+    }
+
+    public async getProductImageByName(productName: string) {
+        await this.webDriver.wait(until.elementLocated(this.productList));
+        const productList = await this.webDriver.findElement(this.productList);
+        const items = await productList.findElements(this.items);
+
+        for (let i = 0; i < items.length; i++) {
+            const name = await (await items[i].findElement(this.productName)).getText();
+            if (name === productName) {
+                const imageElement = await items[i].findElement(this.productImage);
+                await this.seleniumWrappers.waitForPageToLoad();
+                const imageSrc = await imageElement.getAttribute('src');
+                return imageSrc;
+            }
+        }
+
+        throw new Error(`Product with name '${productName}' not found`);
+    }
+
+    public async getProductPriceByName(productName: string) {
+        await this.webDriver.wait(until.elementLocated(this.productList));
+        const productList = await this.webDriver.findElement(this.productList);
+        const items = await productList.findElements(this.items);
+
+        for (let i = 0; i < items.length; i++) {
+            const name = await (await items[i].findElement(this.productName)).getText();
+            if (name === productName) {
+                const priceString = await (await items[i].findElement(this.productPrice)).getText();
+                const price = parseFloat(priceString.replace('$', ''));
+                return price;
+            }
+        }
+
+        throw new Error(`Product with name '${productName}' not found`);
+    }
+
+    public async verifyAddToCartButtonExists(productName: string) {
+        await this.webDriver.wait(until.elementLocated(this.productList));
+        const productList = await this.webDriver.findElement(this.productList);
+        const items = await productList.findElements(this.items);
+
+        for (let i = 0; i < items.length; i++) {
+            const name = await items[i].findElement(this.productName).getText();
+            if (name === productName) {
+                const addToCartButton = await items[i].findElement(this.productButton);
+                const buttonDisplayed = await addToCartButton.isDisplayed();
+                if (buttonDisplayed) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+
+        throw new Error(`Product with name '${productName}' not found`);
     }
 
     public async sortProductsByNameAsc() {
@@ -119,5 +200,21 @@ export class Products extends Page {
         await this.webDriver.wait(until.elementLocated(this.sortOptionPricesDesc));
         const sortOptionPriceDescElement = await this.webDriver.findElement(this.sortOptionPricesDesc);
         await sortOptionPriceDescElement.click();
+    }
+
+    public async clickProductByName(productName: string) {
+        await this.webDriver.wait(until.elementLocated(this.productList));
+        const productList = await this.webDriver.findElement(this.productList);
+        const items = await productList.findElements(this.items);
+
+        for (let i = 0; i < items.length; i++) {
+            const name = await (await items[i].findElement(this.productName)).getText();
+            if (name === productName) {
+                await this.seleniumWrappers.click(await items[i].findElement(this.productName));
+                return;
+            }
+        }
+
+        throw new Error(`Product with name '${productName}' not found`);
     }
 }
