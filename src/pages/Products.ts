@@ -11,6 +11,7 @@ export class Products extends Page {
     productDescription: By;
     productImage: By;
     productButton: By;
+    shoppingCartBadge: By;
     webDriver: WebDriver;
     sortDropdown: By;
     sortOptionNameAsc: By;
@@ -32,6 +33,7 @@ export class Products extends Page {
         this.productDescription = By.css('.inventory_item_desc');
         this.productImage = By.css('img.inventory_item_img');
         this.productButton = By.css('.btn_inventory');
+        this.shoppingCartBadge = By.css('.shopping_cart_badge');
         this.sortDropdown = By.css('.product_sort_container');
         this.sortOptionNameAsc = By.css('option[value="az"]');
         this.sortOptionNameDesc = By.css('option[value="za"]');
@@ -72,7 +74,6 @@ export class Products extends Page {
             const name = await (await items[i].findElement(this.productName)).getText();
             names.push(name);
         }
-
         return names;
     }
 
@@ -216,5 +217,36 @@ export class Products extends Page {
         }
 
         throw new Error(`Product with name '${productName}' not found`);
+    }
+
+    public async addToCart(productName: string) {
+        await this.webDriver.wait(until.elementLocated(this.productList));
+        const productList = await this.webDriver.findElement(this.productList);
+        const items = await productList.findElements(this.items);
+
+        for (let i = 0; i < items.length; i++) {
+            const name = await (await items[i].findElement(this.productName)).getText();
+            console.log(name);
+            if (name === productName) {
+                // console.log(name);
+                const addButton = await items[i].findElement(this.productButton);
+                await addButton.click();
+                return;
+            }
+        }
+
+        throw new Error(`Product with name '${productName}' not found`);
+    }
+
+    public async getShoppingCartBadgeValue(): Promise<number> {
+        const shoppingCartBadgeElements = await this.webDriver.findElements(this.shoppingCartBadge);
+        if (shoppingCartBadgeElements.length != 1) {
+            return 0;
+        }
+        const shoppingCartBadgeElement = shoppingCartBadgeElements[0];
+        const badgeValueString = await shoppingCartBadgeElement.getText();
+        const badgeValue = parseInt(badgeValueString);
+
+        return badgeValue;
     }
 }

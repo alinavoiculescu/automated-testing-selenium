@@ -7,7 +7,7 @@ import { Reports } from '../../utils/reports/Reports';
 import { BrowserWrapper } from '../../utils/wrappers/browser/BrowserWrapper';
 import { SeleniumWrappers } from '../../utils/wrappers/selenium/SeleniumWrappers';
 
-describe('Products page tests', function () {
+describe.only('Products page tests', function () {
     let webDriver: ThenableWebDriver;
     let seleniumWrappers: SeleniumWrappers;
     let reports: Reports;
@@ -191,30 +191,35 @@ describe('Products page tests', function () {
         assert(await allPages.products.verifyProductsDisplayedAndVisible(), 'Expected to display all products');
     });
 
-    // it('A product can be added to the Cart when "Add to Cart" button is clicked', async function () {
-    //     // Navigate to the "Products" page
-    //     //await allPages.navigationMenu.navigateToProducts();
+    it('A product can be added to the Cart when "Add to Cart" button is clicked', async function () {
+        const productNames = await allPages.products.getProductNames();
+        const firstProductName = productNames[0];
 
-    //     // Get the name of a specific product on the page
-    //     const productName = await allPages.products.getProductNames()[0];
+        const initialShoppingCartValue = await allPages.products.getShoppingCartBadgeValue();
+        const initialProductButton = await allPages.products.verifyAddToCartButtonExists(firstProductName);
+        const expectedProductButton = !initialProductButton;
 
-    //     // Click on the "Add to Cart" button for the specific product
-    //     await allPages.products.addToCart(productName);
+        console.log(initialProductButton);
+        console.log(expectedProductButton);
 
-    //     // Verify that the "Add to Cart" button is replaced with the "Remove" button for the specific product
-    //     assert(
-    //         await allPages.products.verifyRemoveButtonDisplayed(productName),
-    //         `Expected the "Remove" button to be displayed for product "${productName}"`,
-    //     );
+        await allPages.products.addToCart(firstProductName);
 
-    //     // Verify that the cart icon on the page is updated to indicate that the product has been added to the cart
-    //     assert(await allPages.navigation.verifyCartIconCount(1), 'Expected the cart icon count to be updated to 1');
+        const updatedShoppingCartValue = await allPages.products.getShoppingCartBadgeValue();
+        const updatedProductButton = await allPages.products.verifyAddToCartButtonExists(firstProductName);
+        console.log(updatedProductButton);
 
-    //     // Navigate to the "Cart" page and verify that the product is displayed in the cart
-    //     await allPages.navigation.navigateToCart();
-    //     assert(
-    //         await allPages.cart.verifyProductDisplayed(productName),
-    //         `Expected product "${productName}" to be displayed in the cart`,
-    //     );
-    // });
+        const shoppingCartValueDifference = updatedShoppingCartValue - initialShoppingCartValue;
+
+        assert.strictEqual(
+            1,
+            shoppingCartValueDifference,
+            `Expected the updated shopping cart value - initial shopping cart value equals to 1`,
+        );
+
+        assert.strictEqual(
+            expectedProductButton,
+            updatedProductButton,
+            `Expected the updated product button to be different than the initial button`,
+        );
+    });
 });
