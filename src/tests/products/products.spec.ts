@@ -258,4 +258,8 @@ describe.only('Products page tests', function () {
             `Expected the cart button to be the same as on the product list`,
         );
     });
+
+    it('Cannot access products page when user is not logged in', async function () {
+        
+    }
 });
