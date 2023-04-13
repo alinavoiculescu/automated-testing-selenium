@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { WebDriver, By, until } from 'selenium-webdriver';
 import { Page } from '../utils/pages/Page';
 import { BrowserWrapper } from '../utils/wrappers/browser/BrowserWrapper';

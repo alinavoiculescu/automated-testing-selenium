@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { config } from '../../config/config';
 import { ThenableWebDriver, Browser } from 'selenium-webdriver';
 import { SeleniumWrappers } from '../../utils/wrappers/selenium/SeleniumWrappers';

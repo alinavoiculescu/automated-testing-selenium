@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { config } from '../../config/config';
 import { assert, expect } from 'chai';
 import { Browser, ThenableWebDriver } from 'selenium-webdriver';
@@ -6,7 +5,7 @@ import { AllPages } from '../../utils/pages/AllPages';
 import { Reports } from '../../utils/reports/Reports';
 import { BrowserWrapper } from '../../utils/wrappers/browser/BrowserWrapper';
 import { SeleniumWrappers } from '../../utils/wrappers/selenium/SeleniumWrappers';
-import { ABOUT_PAGE_URL, PRODUCTS_PAGE_ROUTE } from '../../config/constants';
+import { PRODUCTS_PAGE_ROUTE } from '../../config/constants';
 
 describe.only('Products page tests', function () {
     let webDriver: ThenableWebDriver;
@@ -34,6 +33,18 @@ describe.only('Products page tests', function () {
     after(async function () {
         await seleniumWrappers.waitForPageToLoad();
         await allPages.close();
+    });
+
+    describe('User is logged out', function () {
+        it('Cannot access products page when user is not logged in', async function () {
+            await webDriver.get(config.websiteUrl + PRODUCTS_PAGE_ROUTE);
+            await seleniumWrappers.waitForPageToLoad(10000);
+            const currentUrl = await webDriver.getCurrentUrl();
+            expect(currentUrl, 'Expected redirected URL to not contain Products page route').to.not.include(
+                PRODUCTS_PAGE_ROUTE,
+            );
+            expect(currentUrl, 'Expected redirected URL to be the Login page').to.be.equal(config.websiteUrl);
+        });
     });
 
     describe('User is logged in', function () {
@@ -264,18 +275,6 @@ describe.only('Products page tests', function () {
                 productButton,
                 `Expected the cart button to be the same as on the product list`,
             );
-        });
-    });
-
-    describe('User is logged out', function () {
-        it('Cannot access products page when user is not logged in', async function () {
-            await webDriver.get(config.websiteUrl + PRODUCTS_PAGE_ROUTE);
-            await seleniumWrappers.waitForPageToLoad(10000);
-            const currentUrl = await webDriver.getCurrentUrl();
-            expect(currentUrl, 'Expected redirected URL to not contain Products page route').to.not.include(
-                PRODUCTS_PAGE_ROUTE,
-            );
-            expect(currentUrl, 'Expected redirected URL to be the Login page').to.be.equal(config.websiteUrl);
         });
     });
 });

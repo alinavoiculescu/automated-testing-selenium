@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { config } from '../../config/config';
 import { SeleniumWrappers } from '../wrappers/selenium/SeleniumWrappers';
 import { BrowserWrapper } from '../wrappers/browser/BrowserWrapper';
