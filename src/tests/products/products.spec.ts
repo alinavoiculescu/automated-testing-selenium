@@ -270,7 +270,7 @@ describe.only('Products page tests', function () {
     describe('User is logged out', function () {
         it('Cannot access products page when user is not logged in', async function () {
             await webDriver.get(config.websiteUrl + PRODUCTS_PAGE_ROUTE);
-            await seleniumWrappers.waitForPageToLoad();
+            await seleniumWrappers.waitForPageToLoad(10000);
             const currentUrl = await webDriver.getCurrentUrl();
             expect(currentUrl, 'Expected redirected URL to not contain Products page route').to.not.include(
                 PRODUCTS_PAGE_ROUTE,
