@@ -12,6 +12,7 @@ export class Products extends Page {
     productImage: By;
     productButton: By;
     shoppingCartBadge: By;
+    shoppingCartLink: By;
     webDriver: WebDriver;
     sortDropdown: By;
     sortOptionNameAsc: By;
@@ -34,6 +35,7 @@ export class Products extends Page {
         this.productImage = By.css('img.inventory_item_img');
         this.productButton = By.css('.btn_inventory');
         this.shoppingCartBadge = By.css('.shopping_cart_badge');
+        this.shoppingCartLink = By.css('.shopping_cart_link');
         this.sortDropdown = By.css('.product_sort_container');
         this.sortOptionNameAsc = By.css('option[value="az"]');
         this.sortOptionNameDesc = By.css('option[value="za"]');
@@ -99,7 +101,7 @@ export class Products extends Page {
         for (let i = 0; i < items.length; i++) {
             const name = await (await items[i].findElement(this.productName)).getText();
             if (name === productName) {
-                const description = await (await items[i].findElement(By.css('.inventory_item_desc'))).getText();
+                const description = await (await items[i].findElement(this.productDescription)).getText();
                 return description;
             }
         }
@@ -151,10 +153,10 @@ export class Products extends Page {
             const name = await items[i].findElement(this.productName).getText();
             if (name === productName) {
                 const addToCartButton = await items[i].findElement(this.productButton);
-                const buttonDisplayed = await addToCartButton.isDisplayed();
-                if (buttonDisplayed) {
+                const buttonText = await addToCartButton.getText();
+                if (buttonText === 'Add to cart') {
                     return true;
-                } else {
+                } else if (buttonText === 'Remove') {
                     return false;
                 }
             }
@@ -226,9 +228,7 @@ export class Products extends Page {
 
         for (let i = 0; i < items.length; i++) {
             const name = await (await items[i].findElement(this.productName)).getText();
-            console.log(name);
             if (name === productName) {
-                // console.log(name);
                 const addButton = await items[i].findElement(this.productButton);
                 await addButton.click();
                 return;
@@ -248,5 +248,12 @@ export class Products extends Page {
         const badgeValue = parseInt(badgeValueString);
 
         return badgeValue;
+    }
+
+    public async goToShoppingCart() {
+        await this.webDriver.wait(until.elementLocated(this.shoppingCartLink));
+        const cartLink = await this.webDriver.findElement(this.shoppingCartLink);
+        await cartLink.click();
+        await this.seleniumWrappers.waitForPageToLoad();
     }
 }

@@ -199,14 +199,10 @@ describe.only('Products page tests', function () {
         const initialProductButton = await allPages.products.verifyAddToCartButtonExists(firstProductName);
         const expectedProductButton = !initialProductButton;
 
-        console.log(initialProductButton);
-        console.log(expectedProductButton);
-
         await allPages.products.addToCart(firstProductName);
 
         const updatedShoppingCartValue = await allPages.products.getShoppingCartBadgeValue();
         const updatedProductButton = await allPages.products.verifyAddToCartButtonExists(firstProductName);
-        console.log(updatedProductButton);
 
         const shoppingCartValueDifference = updatedShoppingCartValue - initialShoppingCartValue;
 
@@ -220,6 +216,46 @@ describe.only('Products page tests', function () {
             expectedProductButton,
             updatedProductButton,
             `Expected the updated product button to be different than the initial button`,
+        );
+
+        const productDescription = await allPages.products.getProductDescriptionByName(firstProductName);
+        const productPrice = await allPages.products.getProductPriceByName(firstProductName);
+        const productButton = await allPages.products.verifyAddToCartButtonExists(firstProductName);
+
+        await allPages.products.goToShoppingCart();
+
+        const productQuantityInCart = await allPages.cart.getProductQuantity(firstProductName);
+        assert.strictEqual(1, productQuantityInCart, `Expected the quantity of that product to be 1 in the cart`);
+
+        const cartProductNames = await allPages.cart.getProductNames();
+        const cartFirstProductName = cartProductNames[0];
+
+        const cartProductDescription = await allPages.cart.getProductDescriptionByName(cartFirstProductName);
+        const cartProductPrice = await allPages.cart.getProductPriceByName(cartFirstProductName);
+        const cartProductButton = await allPages.cart.verifyAddToCartButtonExists(cartFirstProductName);
+
+        assert.strictEqual(
+            firstProductName,
+            cartFirstProductName,
+            `Expected the cart product name to be the same as on the product list`,
+        );
+
+        assert.strictEqual(
+            productDescription,
+            cartProductDescription,
+            `Expected the cart product description to be the same as on the product list`,
+        );
+
+        assert.strictEqual(
+            productPrice,
+            cartProductPrice,
+            `Expected the cart product price to be the same as on the product list`,
+        );
+
+        assert.strictEqual(
+            expectedProductButton,
+            productButton,
+            `Expected the cart button to be the same as on the product list`,
         );
     });
 });
