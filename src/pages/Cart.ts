@@ -11,6 +11,7 @@ export class Cart extends Page {
     cartQuantity: By;
     productButton: By;
     shoppingCartBadge: By;
+    goToProductsButton: By;
     webDriver: WebDriver;
 
     constructor(browserWrapper: BrowserWrapper) {
@@ -28,6 +29,7 @@ export class Cart extends Page {
         this.cartQuantity = By.css('.cart_quantity');
         this.productButton = By.css('.cart_button');
         this.shoppingCartBadge = By.css('.shopping_cart_badge');
+        this.goToProductsButton = By.css('.back');
     }
 
     public async getProductNames(): Promise<string[]> {
@@ -110,5 +112,41 @@ export class Cart extends Page {
         }
 
         throw new Error(`Product with name '${productName}' not found`);
+    }
+
+    public async removeFromCart(productName: string) {
+        await this.webDriver.wait(until.elementLocated(this.cartList));
+        const cartList = await this.webDriver.findElement(this.cartList);
+        const items = await cartList.findElements(this.items);
+
+        for (let i = 0; i < items.length; i++) {
+            const name = await (await items[i].findElement(this.productName)).getText();
+            if (name === productName) {
+                const removeButton = await items[i].findElement(this.productButton);
+                await removeButton.click();
+                return;
+            }
+        }
+
+        throw new Error(`Product with name '${productName}' not found`);
+    }
+
+    public async getShoppingCartBadgeValue(): Promise<number> {
+        const shoppingCartBadgeElements = await this.webDriver.findElements(this.shoppingCartBadge);
+        if (shoppingCartBadgeElements.length != 1) {
+            return 0;
+        }
+        const shoppingCartBadgeElement = shoppingCartBadgeElements[0];
+        const badgeValueString = await shoppingCartBadgeElement.getText();
+        const badgeValue = parseInt(badgeValueString);
+
+        return badgeValue;
+    }
+
+    public async goToProducts() {
+        await this.webDriver.wait(until.elementLocated(this.goToProductsButton));
+        const continueShoppingButton = await this.webDriver.findElement(this.goToProductsButton);
+        await continueShoppingButton.click();
+        await this.seleniumWrappers.waitForPageToLoad();
     }
 }

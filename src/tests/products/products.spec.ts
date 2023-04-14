@@ -277,7 +277,67 @@ describe.only('Products page tests', function () {
         });
 
         it('A product can be removed from the Cart when "Remove item" button is clicked', async function () {
-            console.log('hey');
+            const productNames: string[] = await allPages.products.getProductNames();
+            let findRemoveButtonProductName = '';
+            let findRemoveButton = true;
+            for (let i = 0; i < productNames.length; i++) {
+                const currentProductName = productNames[i];
+                const haveAddToCartButton = await allPages.products.verifyAddToCartButtonExists(currentProductName);
+
+                if (!haveAddToCartButton) {
+                    findRemoveButtonProductName = currentProductName;
+                    findRemoveButton = haveAddToCartButton;
+                    break;
+                }
+            }
+
+            const productNameWithRemoveButton = findRemoveButtonProductName;
+            const productRemoveButton = findRemoveButton;
+
+            const initialShoppingCartValue = await allPages.products.getShoppingCartBadgeValue();
+            const expectedShoppingCartValue = initialShoppingCartValue - 1;
+            const expectedButton = !productRemoveButton;
+
+            await allPages.products.removeFromCart(productNameWithRemoveButton);
+
+            const actualShoppingCartValue = await allPages.products.getShoppingCartBadgeValue();
+            const actualButton = await allPages.products.verifyAddToCartButtonExists(productNameWithRemoveButton);
+
+            assert.strictEqual(
+                actualShoppingCartValue,
+                expectedShoppingCartValue,
+                `Expected the cart value from products to be equal to initial shopping cart value - 1`,
+            );
+
+            assert.strictEqual(
+                actualButton,
+                expectedButton,
+                `Expected the product button to be add to cart instead of remove`,
+            );
+
+            await allPages.products.goToShoppingCart();
+
+            const productQuantityInCart = await allPages.cart.getProductQuantity(productNameWithRemoveButton);
+            assert.strictEqual(0, productQuantityInCart, `Expected the quantity of that product to be 0 in the cart`);
+
+            await allPages.cart.goToProducts();
+
+            await allPages.products.addToCart(productNameWithRemoveButton);
+
+            await allPages.products.goToShoppingCart();
+
+            const initialCartShoppingBadge = await allPages.cart.getShoppingCartBadgeValue();
+            const expectedCartShoppingBadge = initialCartShoppingBadge - 1;
+            await allPages.cart.removeFromCart(productNameWithRemoveButton);
+            const productQuantityInCart2 = await allPages.cart.getProductQuantity(productNameWithRemoveButton);
+            const updatedShoppingCartBadge = await allPages.cart.getShoppingCartBadgeValue();
+
+            assert.strictEqual(0, productQuantityInCart2, `Expected the quantity of that product to be 0 in the cart`);
+            assert.strictEqual(
+                updatedShoppingCartBadge,
+                expectedCartShoppingBadge,
+                `Expected the cart value from cart page to be equal to initial shopping cart value - 1`,
+            );
         });
     });
 });

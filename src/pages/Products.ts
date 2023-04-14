@@ -237,6 +237,23 @@ export class Products extends Page {
         throw new Error(`Product with name '${productName}' not found`);
     }
 
+    public async removeFromCart(productName: string) {
+        await this.webDriver.wait(until.elementLocated(this.productList));
+        const productList = await this.webDriver.findElement(this.productList);
+        const items = await productList.findElements(this.items);
+
+        for (let i = 0; i < items.length; i++) {
+            const name = await (await items[i].findElement(this.productName)).getText();
+            if (name === productName) {
+                const removeButton = await items[i].findElement(this.productButton);
+                await removeButton.click();
+                return;
+            }
+        }
+
+        throw new Error(`Product with name '${productName}' not found`);
+    }
+
     public async getShoppingCartBadgeValue(): Promise<number> {
         const shoppingCartBadgeElements = await this.webDriver.findElements(this.shoppingCartBadge);
         if (shoppingCartBadgeElements.length != 1) {
