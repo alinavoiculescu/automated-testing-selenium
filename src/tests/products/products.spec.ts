@@ -339,5 +339,43 @@ describe.only('Products page tests', function () {
                 `Expected the cart value from cart page to be equal to initial shopping cart value - 1`,
             );
         });
+
+        it('All products can be added to Cart', async function () {
+            const productNames: string[] = await allPages.products.getProductNames();
+            for (let i = 0; i < productNames.length; i++) {
+                await allPages.products.addToCart(productNames[i]);
+            }
+
+            await allPages.products.goToShoppingCart();
+
+            const cartProductNames: string[] = await allPages.cart.getProductNames();
+
+            let ok = true;
+
+            if (cartProductNames.length != productNames.length) {
+                ok = false;
+            } else {
+                for (let i = 0; i < cartProductNames.length; i++) {
+                    if (cartProductNames[i] != productNames[i]) {
+                        ok = false;
+                    }
+                }
+            }
+
+            assert.strictEqual(ok, true, `Expected all the products to be added to the cart`);
+        });
+
+        it('All products can be removed from the Cart', async function () {
+            const productNames: string[] = await allPages.products.getProductNames();
+            for (let i = 0; i < productNames.length; i++) {
+                await allPages.products.removeFromCart(productNames[i]);
+            }
+
+            await allPages.products.goToShoppingCart();
+
+            const cartProductNames: string[] = await allPages.cart.getProductNames();
+
+            assert.strictEqual(cartProductNames.length, 0, `Expected all the products have been removed from the cart`);
+        });
     });
 });
