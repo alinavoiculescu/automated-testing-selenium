@@ -59,6 +59,18 @@ export class ProductDetails extends Page {
         return addToCartButtonElement.isDisplayed();
     }
 
+    public async addToCart() {
+        await this.webDriver.wait(until.elementLocated(this.addToCartButton));
+        const addButton = await this.webDriver.findElement(this.addToCartButton);
+        await addButton.click();
+    }
+
+    public async removeFromCart() {
+        await this.webDriver.wait(until.elementLocated(this.addToCartButton));
+        const removeButton = await this.webDriver.findElement(this.addToCartButton);
+        await removeButton.click();
+    }
+
     public async navigateBackToProductsPage() {
         await this.webDriver.wait(until.elementLocated(this.backButton));
         const backButtonElement = await this.webDriver.findElement(this.backButton);

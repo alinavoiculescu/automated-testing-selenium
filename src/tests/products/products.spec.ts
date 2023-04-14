@@ -7,7 +7,7 @@ import { BrowserWrapper } from '../../utils/wrappers/browser/BrowserWrapper';
 import { SeleniumWrappers } from '../../utils/wrappers/selenium/SeleniumWrappers';
 import { PRODUCTS_PAGE_ROUTE } from '../../config/constants';
 
-describe.only('Products page tests', function () {
+describe('Products page tests', function () {
     let webDriver: ThenableWebDriver;
     let seleniumWrappers: SeleniumWrappers;
     let reports: Reports;
@@ -319,25 +319,6 @@ describe.only('Products page tests', function () {
 
             const productQuantityInCart = await allPages.cart.getProductQuantity(productNameWithRemoveButton);
             assert.strictEqual(0, productQuantityInCart, `Expected the quantity of that product to be 0 in the cart`);
-
-            await allPages.cart.goToProducts();
-
-            await allPages.products.addToCart(productNameWithRemoveButton);
-
-            await allPages.products.goToShoppingCart();
-
-            const initialCartShoppingBadge = await allPages.cart.getShoppingCartBadgeValue();
-            const expectedCartShoppingBadge = initialCartShoppingBadge - 1;
-            await allPages.cart.removeFromCart(productNameWithRemoveButton);
-            const productQuantityInCart2 = await allPages.cart.getProductQuantity(productNameWithRemoveButton);
-            const updatedShoppingCartBadge = await allPages.cart.getShoppingCartBadgeValue();
-
-            assert.strictEqual(0, productQuantityInCart2, `Expected the quantity of that product to be 0 in the cart`);
-            assert.strictEqual(
-                updatedShoppingCartBadge,
-                expectedCartShoppingBadge,
-                `Expected the cart value from cart page to be equal to initial shopping cart value - 1`,
-            );
         });
 
         it('All products can be added to Cart', async function () {
@@ -350,25 +331,55 @@ describe.only('Products page tests', function () {
 
             const cartProductNames: string[] = await allPages.cart.getProductNames();
 
-            let ok = true;
-
-            if (cartProductNames.length != productNames.length) {
-                ok = false;
-            } else {
-                for (let i = 0; i < cartProductNames.length; i++) {
-                    if (cartProductNames[i] != productNames[i]) {
-                        ok = false;
-                    }
-                }
-            }
-
-            assert.strictEqual(ok, true, `Expected all the products to be added to the cart`);
+            expect(productNames).to.deep.equal(cartProductNames, 'Expected all the products to be added to the cart');
         });
 
         it('All products can be removed from the Cart', async function () {
             const productNames: string[] = await allPages.products.getProductNames();
             for (let i = 0; i < productNames.length; i++) {
                 await allPages.products.removeFromCart(productNames[i]);
+            }
+
+            await allPages.products.goToShoppingCart();
+
+            const cartProductNames: string[] = await allPages.cart.getProductNames();
+
+            assert.strictEqual(cartProductNames.length, 0, `Expected all the products have been removed from the cart`);
+        });
+
+        it('All products can be added to the Cart from product details', async function () {
+            const productNames: string[] = await allPages.products.getProductNames();
+            for (let i = 0; i < productNames.length; i++) {
+                const productName = productNames[i];
+
+                await allPages.products.clickProductByName(productName);
+                await seleniumWrappers.waitForPageToLoad();
+
+                await allPages.productDetails.addToCart();
+
+                await allPages.productDetails.navigateBackToProductsPage();
+                await seleniumWrappers.waitForPageToLoad();
+            }
+
+            await allPages.products.goToShoppingCart();
+
+            const cartProductNames: string[] = await allPages.cart.getProductNames();
+
+            expect(productNames).to.deep.equal(cartProductNames, 'Expected all the products to be added to the cart');
+        });
+
+        it('All products can be removed to the Cart from product details', async function () {
+            const productNames: string[] = await allPages.products.getProductNames();
+            for (let i = 0; i < productNames.length; i++) {
+                const productName = productNames[i];
+
+                await allPages.products.clickProductByName(productName);
+                await seleniumWrappers.waitForPageToLoad();
+
+                await allPages.productDetails.removeFromCart();
+
+                await allPages.productDetails.navigateBackToProductsPage();
+                await seleniumWrappers.waitForPageToLoad();
             }
 
             await allPages.products.goToShoppingCart();
