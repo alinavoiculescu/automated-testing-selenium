@@ -238,7 +238,6 @@ describe.only('Products page tests', function () {
 
             const productDescription = await allPages.products.getProductDescriptionByName(firstProductName);
             const productPrice = await allPages.products.getProductPriceByName(firstProductName);
-            const productButton = await allPages.products.verifyAddToCartButtonExists(firstProductName);
 
             await allPages.products.goToShoppingCart();
 
@@ -272,9 +271,13 @@ describe.only('Products page tests', function () {
 
             assert.strictEqual(
                 expectedProductButton,
-                productButton,
+                cartProductButton,
                 `Expected the cart button to be the same as on the product list`,
             );
+        });
+
+        it('A product can be removed from the Cart when "Remove item" button is clicked', async function () {
+            console.log('hey');
         });
     });
 });

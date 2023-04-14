@@ -48,8 +48,6 @@ export class Cart extends Page {
         const cartList = await this.webDriver.findElement(this.cartList);
         const items = await cartList.findElements(this.items);
 
-        console.log(productName);
-
         for (let i = 0; i < items.length; i++) {
             const name = await items[i].findElement(this.productName).getText();
             if (name === productName) {
