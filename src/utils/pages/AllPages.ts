@@ -8,6 +8,9 @@ import { Footer } from '../../pages/shared/Footer';
 import { Products } from '../../pages/Products';
 import { ProductDetails } from '../../pages/ProductDetails';
 import { Cart } from '../../pages/Cart';
+import { Checkout } from '../../pages/checkout/checkout';
+import { CheckoutOverview } from '../../pages/checkout/CheckoutOverview';
+import { CheckoutComplete } from '../../pages/checkout/CheckoutComplete';
 
 export class AllPages {
     public login: Login;
@@ -16,6 +19,9 @@ export class AllPages {
     public products: Products;
     public productDetails: ProductDetails;
     public cart: Cart;
+    public checkout: Checkout;
+    public checkoutOverview: CheckoutOverview;
+    public checkoutComplete: CheckoutComplete;
 
     public seleniumWrappers: SeleniumWrappers;
 
@@ -27,6 +33,9 @@ export class AllPages {
         this.products = new Products(browserWrapper);
         this.productDetails = new ProductDetails(browserWrapper);
         this.cart = new Cart(browserWrapper);
+        this.checkout = new Checkout(browserWrapper);
+        this.checkoutOverview = new CheckoutOverview(browserWrapper);
+        this.checkoutComplete = new CheckoutComplete(browserWrapper);
     }
 
     public getWebDriver() {
