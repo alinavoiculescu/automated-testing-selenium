@@ -1,6 +1,6 @@
 import { config } from '../../config/config';
 import { assert, expect } from 'chai';
-import { Browser, ThenableWebDriver, until } from 'selenium-webdriver';
+import { Browser, ThenableWebDriver } from 'selenium-webdriver';
 import { AllPages } from '../../utils/pages/AllPages';
 import { Reports } from '../../utils/reports/Reports';
 import { BrowserWrapper } from '../../utils/wrappers/browser/BrowserWrapper';
