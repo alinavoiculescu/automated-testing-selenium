@@ -64,7 +64,21 @@ describe.only('Cart page tests', function () {
             const cartProductNames: string[] = await allPages.cart.getProductNames();
 
             for (let i = 0; i < cartProductNames.length; i++) {
+                const initialShoppingBadgeValue = await allPages.cart.getShoppingCartBadgeValue();
                 await allPages.cart.removeFromCart(cartProductNames[i]);
+                const shoppingBadgeValueAfterRemovedProduct = await allPages.cart.getShoppingCartBadgeValue();
+                const deletedProductQuantity = await allPages.cart.getProductQuantity(cartProductNames[i]);
+                assert.strictEqual(
+                    0,
+                    deletedProductQuantity,
+                    `Expected the quantity for ${cartProductNames[i]} to be 0 after it was removed from the cart`,
+                );
+
+                assert.strictEqual(
+                    initialShoppingBadgeValue - 1,
+                    shoppingBadgeValueAfterRemovedProduct,
+                    `Expected the shopping cart value to be initial value -1`,
+                );
             }
 
             const updatedShoppingCartValue = await allPages.cart.getShoppingCartBadgeValue();
@@ -85,7 +99,7 @@ describe.only('Cart page tests', function () {
             );
         });
 
-        it('A random product can be removed from the Cart', async function () {
+        it('Random product is being removed from the cart when the “Remove” button is clicked from Cart page', async function () {
             const productNames: string[] = await allPages.products.getProductNames();
             for (let i = 0; i < productNames.length; i++) {
                 await allPages.products.addToCart(productNames[i]);
