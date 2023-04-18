@@ -5,7 +5,13 @@ import { AllPages } from '../../utils/pages/AllPages';
 import { Reports } from '../../utils/reports/Reports';
 import { BrowserWrapper } from '../../utils/wrappers/browser/BrowserWrapper';
 import { SeleniumWrappers } from '../../utils/wrappers/selenium/SeleniumWrappers';
-import { CART_PAGE_ROUTE, PRODUCTS_PAGE_ROUTE, REQUIRED_FIRST_NAME } from '../../config/constants';
+import {
+    CART_PAGE_ROUTE,
+    ORDER_HEADER_TEXT,
+    ORDER_TEXT,
+    PRODUCTS_PAGE_ROUTE,
+    REQUIRED_FIRST_NAME,
+} from '../../config/constants';
 
 describe.only('Cart page tests', function () {
     let webDriver: ThenableWebDriver;
@@ -166,8 +172,8 @@ describe.only('Cart page tests', function () {
             const headerOrderElement = await webDriver.findElement(allPages.checkoutComplete.headerOrder);
             const headerOrderText = await headerOrderElement.getText();
 
-            expect(headerOrderText, 'Expected order header text to be "Thank you for your order!"').to.be.equal(
-                'Thank you for your order!',
+            expect(headerOrderText, `Expected order header text to be "${ORDER_HEADER_TEXT}"`).to.be.equal(
+                ORDER_HEADER_TEXT,
             );
 
             expect(
@@ -178,10 +184,7 @@ describe.only('Cart page tests', function () {
             const textOrderElement = await webDriver.findElement(allPages.checkoutComplete.textOrder);
             const textOrderText = await textOrderElement.getText();
 
-            expect(
-                textOrderText,
-                'Expected order header text to be "Your order has been dispatched, and will arrive just as fast as the pony can get there!"',
-            ).to.be.equal('Your order has been dispatched, and will arrive just as fast as the pony can get there!');
+            expect(textOrderText, `Expected order text to be "${ORDER_TEXT}"`).to.be.equal(ORDER_TEXT);
         });
 
         it('Home page is displayed when "Back Home" button is clicked after a successfully placed order', async function () {

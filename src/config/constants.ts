@@ -10,5 +10,7 @@ export const PRODUCTS_PAGE_ROUTE = 'inventory.html';
 export const CART_PAGE_ROUTE = 'cart.html';
 export const REQUIRED_FIRST_NAME = 'First Name is required';
 export const REQUIRED_LAST_NAME = 'Last Name is required';
+export const ORDER_HEADER_TEXT = 'Thank you for your order!';
+export const ORDER_TEXT = 'Your order has been dispatched, and will arrive just as fast as the pony can get there!';
 export const REQUIRED_POSTAL_CODE = 'Postal Code is required';
 export const ABOUT_PAGE_URL = 'https://saucelabs.com/';
