@@ -321,7 +321,7 @@ describe('Products page tests', function () {
             assert.strictEqual(0, productQuantityInCart, `Expected the quantity of that product to be 0 in the cart`);
         });
 
-        it('All products can be added to Cart', async function () {
+        it('All products can be added to the Cart when "Add to Cart" button is clicked for each one', async function () {
             const productNames: string[] = await allPages.products.getProductNames();
             for (let i = 0; i < productNames.length; i++) {
                 await allPages.products.addToCart(productNames[i]);
@@ -334,7 +334,7 @@ describe('Products page tests', function () {
             expect(productNames).to.deep.equal(cartProductNames, 'Expected all the products to be added to the cart');
         });
 
-        it('All products can be removed from the Cart', async function () {
+        it('All products can be removed from the Cart when "Remove" button is clicked for each one', async function () {
             const productNames: string[] = await allPages.products.getProductNames();
             for (let i = 0; i < productNames.length; i++) {
                 await allPages.products.removeFromCart(productNames[i]);
@@ -347,7 +347,7 @@ describe('Products page tests', function () {
             assert.strictEqual(cartProductNames.length, 0, `Expected all the products have been removed from the cart`);
         });
 
-        it('All products can be added to the Cart from product details', async function () {
+        it('All products can be added to the Cart from product details when "Add to Cart" button is clicked for each one', async function () {
             const productNames: string[] = await allPages.products.getProductNames();
             for (let i = 0; i < productNames.length; i++) {
                 const productName = productNames[i];
@@ -368,7 +368,7 @@ describe('Products page tests', function () {
             expect(productNames).to.deep.equal(cartProductNames, 'Expected all the products to be added to the cart');
         });
 
-        it('All products can be removed to the Cart from product details', async function () {
+        it('All products can be removed to the Cart from product details when "Remove" button is clicked for each one', async function () {
             const productNames: string[] = await allPages.products.getProductNames();
             for (let i = 0; i < productNames.length; i++) {
                 const productName = productNames[i];

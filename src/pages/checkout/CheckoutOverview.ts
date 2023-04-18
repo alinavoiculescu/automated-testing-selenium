@@ -105,6 +105,30 @@ export class CheckoutOverview extends Page {
         }
     }
 
+    public async getItemsSubtotal(): Promise<number> {
+        await this.webDriver.wait(until.elementLocated(this.itemsSubtotal));
+        const itemsSubtotalElement = await this.webDriver.findElement(this.itemsSubtotal);
+        const itemsSubtotalString = await itemsSubtotalElement.getText();
+        const itemsSubtotal = parseFloat(itemsSubtotalString.replace(/[^0-9.]/g, ''));
+        return itemsSubtotal;
+    }
+
+    public async getTaxValue(): Promise<number> {
+        await this.webDriver.wait(until.elementLocated(this.taxValue));
+        const taxValueElement = await this.webDriver.findElement(this.taxValue);
+        const taxValueString = await taxValueElement.getText();
+        const taxValue = parseFloat(taxValueString.replace(/[^0-9.]/g, ''));
+        return taxValue;
+    }
+
+    public async getTotalValue(): Promise<number> {
+        await this.webDriver.wait(until.elementLocated(this.totalValue));
+        const totalValueElement = await this.webDriver.findElement(this.totalValue);
+        const totalValueString = await totalValueElement.getText();
+        const totalValue = parseFloat(totalValueString.replace(/[^0-9.]/g, ''));
+        return totalValue;
+    }
+
     public async cancelCheckout() {
         await this.webDriver.wait(until.elementLocated(this.cancelOrderButton));
         const cancelCheckoutButton = await this.webDriver.findElement(this.cancelOrderButton);

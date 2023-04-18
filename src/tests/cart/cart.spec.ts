@@ -15,7 +15,7 @@ import {
     REQUIRED_POSTAL_CODE,
 } from '../../config/constants';
 
-describe.only('Cart page tests', function () {
+describe('Cart page tests', function () {
     let webDriver: ThenableWebDriver;
     let seleniumWrappers: SeleniumWrappers;
     let reports: Reports;
@@ -545,6 +545,78 @@ describe.only('Cart page tests', function () {
                 await postalCode.getAttribute('class'),
                 'Expected postal code input element to contain class `error`',
             ).to.contain('error');
+        });
+
+        it('Item total, Tax and Total ammount to be paid are calculated correctly when landing to the "Checkout Overview" page', async function () {
+            await allPages.products.goToShoppingCart();
+
+            await allPages.cart.scrollDown();
+
+            await allPages.cart.goToCheckout();
+
+            await allPages.checkout.fillFirstName('Popescu');
+            await allPages.checkout.fillLastName('Robertto');
+            await allPages.checkout.fillPostalCode('123');
+
+            await allPages.checkout.continueToCheckoutOverview();
+            await seleniumWrappers.waitForPageToLoad();
+            await allPages.checkoutOverview.scrollDown();
+
+            const checkoutOverviewProductNames: string[] = await allPages.checkoutOverview.getProductNames();
+
+            expect(
+                await seleniumWrappers.isDisplayed(allPages.checkoutOverview.itemsSubtotal),
+                'Expected the item total to be displayed',
+            ).to.be.true;
+
+            const totalItemSumDisplayed = await allPages.checkoutOverview.getItemsSubtotal();
+
+            let expectedTotalItemSum = 0;
+            for (let i = 0; i < checkoutOverviewProductNames.length; i++) {
+                const checkoutOverviewProductName = checkoutOverviewProductNames[i];
+                expectedTotalItemSum += await allPages.checkoutOverview.getProductPriceByName(
+                    checkoutOverviewProductName,
+                );
+            }
+
+            assert.strictEqual(
+                expectedTotalItemSum,
+                totalItemSumDisplayed,
+                `Expected the item total value to be ${expectedTotalItemSum} $`,
+            );
+
+            expect(
+                await seleniumWrappers.isDisplayed(allPages.checkoutOverview.taxValue),
+                'Expected the tax value to be displayed',
+            ).to.be.true;
+
+            const taxValueDisplayed = await allPages.checkoutOverview.getTaxValue();
+
+            const taxRate = 0.08;
+
+            const expectedTaxValue = expectedTotalItemSum * taxRate;
+            const expectedTaxValueRounded = Math.round(expectedTaxValue * 100) / 100;
+
+            assert.strictEqual(
+                expectedTaxValueRounded,
+                taxValueDisplayed,
+                `Expected the tax value to be ${expectedTaxValueRounded} $`,
+            );
+
+            expect(
+                await seleniumWrappers.isDisplayed(allPages.checkoutOverview.totalValue),
+                'Expected the total amount to be paid to be displayed',
+            ).to.be.true;
+
+            const totalAmountDisplayed = await allPages.checkoutOverview.getTotalValue();
+
+            const expectedTotalAmount = expectedTotalItemSum + expectedTaxValueRounded;
+
+            assert.strictEqual(
+                expectedTotalAmount,
+                totalAmountDisplayed,
+                `Expected the total amount to be paid to be ${expectedTotalAmount} $`,
+            );
         });
     });
 });
