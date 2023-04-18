@@ -325,5 +325,65 @@ describe.only('Cart page tests', function () {
                 );
             }
         });
+
+        it('Order progress is canceled when "Cancel" button from checkout is clicked', async function () {
+            const productNames: string[] = await allPages.products.getProductNames();
+            for (let i = 0; i < productNames.length; i++) {
+                await allPages.products.addToCart(productNames[i]);
+            }
+
+            await allPages.products.goToShoppingCart();
+
+            await allPages.cart.goToCheckout();
+
+            await seleniumWrappers.waitForPageToLoad();
+
+            expect(
+                await seleniumWrappers.isDisplayed(allPages.checkout.cancelCheckoutButton),
+                'Expected the cancel button to be displayed',
+            ).to.be.true;
+
+            await allPages.checkout.cancelProgress();
+
+            await seleniumWrappers.waitForPageToLoad();
+
+            const currentUrl = await webDriver.getCurrentUrl();
+            expect(currentUrl, 'Expected redirected URL to contain Cart page route').to.include(CART_PAGE_ROUTE);
+        });
+
+        it('Order progress is canceled when "Cancel" button from checkout overview is clicked', async function () {
+            const productNames: string[] = await allPages.products.getProductNames();
+            for (let i = 0; i < productNames.length; i++) {
+                await allPages.products.addToCart(productNames[i]);
+            }
+
+            await allPages.products.goToShoppingCart();
+
+            await allPages.cart.goToCheckout();
+
+            await allPages.checkout.fillFirstName('Popescu');
+            await allPages.checkout.fillLastName('Robertto');
+            await allPages.checkout.fillPostalCode('123');
+
+            await allPages.checkout.continueToCheckoutOverview();
+
+            await seleniumWrappers.waitForPageToLoad();
+
+            await allPages.checkoutOverview.scrollDown();
+
+            expect(
+                await seleniumWrappers.isDisplayed(allPages.checkoutOverview.cancelOrderButton),
+                'Expected the cancel button to be displayed',
+            ).to.be.true;
+
+            await allPages.checkoutOverview.cancelCheckout();
+
+            await seleniumWrappers.waitForPageToLoad();
+
+            const currentUrl = await webDriver.getCurrentUrl();
+            expect(currentUrl, 'Expected redirected URL to contain Products page route').to.include(
+                PRODUCTS_PAGE_ROUTE,
+            );
+        });
     });
 });

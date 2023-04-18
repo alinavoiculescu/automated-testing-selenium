@@ -97,6 +97,14 @@ export class CheckoutOverview extends Page {
         return 0;
     }
 
+    public async scrollDown() {
+        const checkoutList = await this.webDriver.findElement(this.checkoutList);
+        const items = await checkoutList.findElements(this.items);
+        for (let i = 0; i < items.length; i++) {
+            await this.seleniumWrappers.scrollToElement(items[i]);
+        }
+    }
+
     public async cancelCheckout() {
         await this.webDriver.wait(until.elementLocated(this.cancelOrderButton));
         const cancelCheckoutButton = await this.webDriver.findElement(this.cancelOrderButton);
