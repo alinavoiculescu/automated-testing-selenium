@@ -141,6 +141,8 @@ describe.only('Cart page tests', function () {
 
             await allPages.products.goToShoppingCart();
 
+            await allPages.cart.scrollDown();
+
             await allPages.cart.goToCheckout();
 
             await allPages.checkout.fillFirstName('Popescu');
@@ -190,6 +192,8 @@ describe.only('Cart page tests', function () {
 
             await allPages.products.goToShoppingCart();
 
+            await allPages.cart.scrollDown();
+
             await allPages.cart.goToCheckout();
 
             await allPages.checkout.fillFirstName('Popescu');
@@ -222,6 +226,8 @@ describe.only('Cart page tests', function () {
             }
 
             await allPages.products.goToShoppingCart();
+
+            await allPages.cart.scrollDown();
 
             await allPages.cart.goToCheckout();
 
@@ -262,6 +268,8 @@ describe.only('Cart page tests', function () {
             }
 
             await allPages.products.goToShoppingCart();
+
+            await allPages.cart.scrollDown();
 
             const cartProducts: string[] = await allPages.cart.getProductNames();
 
@@ -334,6 +342,8 @@ describe.only('Cart page tests', function () {
 
             await allPages.products.goToShoppingCart();
 
+            await allPages.cart.scrollDown();
+
             await allPages.cart.goToCheckout();
 
             await seleniumWrappers.waitForPageToLoad();
@@ -358,6 +368,8 @@ describe.only('Cart page tests', function () {
             }
 
             await allPages.products.goToShoppingCart();
+
+            await allPages.cart.scrollDown();
 
             await allPages.cart.goToCheckout();
 

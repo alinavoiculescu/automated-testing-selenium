@@ -145,6 +145,14 @@ export class Cart extends Page {
         return badgeValue;
     }
 
+    public async scrollDown() {
+        const cartList = await this.webDriver.findElement(this.cartList);
+        const items = await cartList.findElements(this.items);
+        for (let i = 0; i < items.length; i++) {
+            await this.seleniumWrappers.scrollToElement(items[i]);
+        }
+    }
+
     public async goToProducts() {
         await this.webDriver.wait(until.elementLocated(this.goToProductsButton));
         const continueShoppingButton = await this.webDriver.findElement(this.goToProductsButton);
