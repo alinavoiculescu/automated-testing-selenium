@@ -5,7 +5,7 @@ import { AllPages } from '../../utils/pages/AllPages';
 import { Reports } from '../../utils/reports/Reports';
 import { BrowserWrapper } from '../../utils/wrappers/browser/BrowserWrapper';
 import { SeleniumWrappers } from '../../utils/wrappers/selenium/SeleniumWrappers';
-import { CART_PAGE_ROUTE } from '../../config/constants';
+import { CART_PAGE_ROUTE, PRODUCTS_PAGE_ROUTE } from '../../config/constants';
 
 describe.only('Cart page tests', function () {
     let webDriver: ThenableWebDriver;
@@ -77,7 +77,7 @@ describe.only('Cart page tests', function () {
                 assert.strictEqual(
                     initialShoppingBadgeValue - 1,
                     shoppingBadgeValueAfterRemovedProduct,
-                    `Expected the shopping cart value to be initial value -1`,
+                    `Expected the shopping cart value to be initial value - 1`,
                 );
             }
 
@@ -180,6 +180,79 @@ describe.only('Cart page tests', function () {
                 textOrderText,
                 'Expected order header text to be "Your order has been dispatched, and will arrive just as fast as the pony can get there!"',
             ).to.be.equal('Your order has been dispatched, and will arrive just as fast as the pony can get there!');
+        });
+
+        it('Home page is displayed when "Back Home" button is clicked after a successfully placed order', async function () {
+            const productNames: string[] = await allPages.products.getProductNames();
+            for (let i = 0; i < productNames.length; i++) {
+                await allPages.products.addToCart(productNames[i]);
+            }
+
+            await allPages.products.goToShoppingCart();
+
+            await allPages.cart.goToCheckout();
+
+            await allPages.checkout.fillFirstName('Popescu');
+            await allPages.checkout.fillLastName('Robertto');
+            await allPages.checkout.fillPostalCode('123');
+
+            await allPages.checkout.continueToCheckoutOverview();
+            await allPages.checkoutOverview.placeOrder();
+
+            await seleniumWrappers.waitForPageToLoad();
+
+            expect(
+                await seleniumWrappers.isDisplayed(allPages.checkoutComplete.backHomeButton),
+                'Expected the back to home button to be displayed',
+            ).to.be.true;
+
+            await allPages.checkoutComplete.goToHome();
+
+            await seleniumWrappers.waitForPageToLoad();
+            const currentUrl = await webDriver.getCurrentUrl();
+            expect(currentUrl, 'Expected redirected URL to contain Products page route').to.include(
+                PRODUCTS_PAGE_ROUTE,
+            );
+        });
+
+        it('The cart is empty after finishing an order', async function () {
+            const productNames: string[] = await allPages.products.getProductNames();
+            for (let i = 0; i < productNames.length; i++) {
+                await allPages.products.addToCart(productNames[i]);
+            }
+
+            await allPages.products.goToShoppingCart();
+
+            await allPages.cart.goToCheckout();
+
+            await allPages.checkout.fillFirstName('Popescu');
+            await allPages.checkout.fillLastName('Robertto');
+            await allPages.checkout.fillPostalCode('123');
+
+            await allPages.checkout.continueToCheckoutOverview();
+            await allPages.checkoutOverview.placeOrder();
+
+            await seleniumWrappers.waitForPageToLoad();
+
+            await allPages.checkoutComplete.goToHome();
+
+            await seleniumWrappers.waitForPageToLoad();
+            const currentUrl = await webDriver.getCurrentUrl();
+
+            expect(currentUrl, 'Expected redirected URL to contain Products page route').to.include(
+                PRODUCTS_PAGE_ROUTE,
+            );
+
+            const updatedShoppingBadgeValue = await allPages.products.getShoppingCartBadgeValue();
+
+            assert.strictEqual(updatedShoppingBadgeValue, 0, `Expected the shopping badge value to be 0`);
+
+            await allPages.products.goToShoppingCart();
+            await seleniumWrappers.waitForPageToLoad();
+
+            const cartProductNames: string[] = await allPages.cart.getProductNames();
+
+            assert.strictEqual(cartProductNames.length, 0, `Expected the cart to be empty`);
         });
     });
 });
