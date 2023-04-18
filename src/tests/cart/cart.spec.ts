@@ -1,6 +1,6 @@
 import { config } from '../../config/config';
 import { assert, expect } from 'chai';
-import { Browser, ThenableWebDriver } from 'selenium-webdriver';
+import { Browser, ThenableWebDriver, until } from 'selenium-webdriver';
 import { AllPages } from '../../utils/pages/AllPages';
 import { Reports } from '../../utils/reports/Reports';
 import { BrowserWrapper } from '../../utils/wrappers/browser/BrowserWrapper';
@@ -133,7 +133,7 @@ describe.only('Cart page tests', function () {
             );
         });
 
-        it('Can place an order', async function () {
+        it('An order can be placed when "Finish" button from checkout overview is clicked', async function () {
             const productNames: string[] = await allPages.products.getProductNames();
             for (let i = 0; i < productNames.length; i++) {
                 await allPages.products.addToCart(productNames[i]);
@@ -149,6 +149,37 @@ describe.only('Cart page tests', function () {
 
             await allPages.checkout.continueToCheckoutOverview();
             await allPages.checkoutOverview.placeOrder();
+
+            await seleniumWrappers.waitForPageToLoad();
+            expect(
+                await seleniumWrappers.isDisplayed(allPages.checkoutComplete.iconOrder),
+                'Expected the icon to be displayed',
+            ).to.be.true;
+
+            expect(
+                await seleniumWrappers.isDisplayed(allPages.checkoutComplete.headerOrder),
+                'Expected the order header to be displayed',
+            ).to.be.true;
+
+            const headerOrderElement = await webDriver.findElement(allPages.checkoutComplete.headerOrder);
+            const headerOrderText = await headerOrderElement.getText();
+
+            expect(headerOrderText, 'Expected order header text to be "Thank you for your order!"').to.be.equal(
+                'Thank you for your order!',
+            );
+
+            expect(
+                await seleniumWrappers.isDisplayed(allPages.checkoutComplete.textOrder),
+                'Expected the order text to be displayed',
+            ).to.be.true;
+
+            const textOrderElement = await webDriver.findElement(allPages.checkoutComplete.textOrder);
+            const textOrderText = await textOrderElement.getText();
+
+            expect(
+                textOrderText,
+                'Expected order header text to be "Your order has been dispatched, and will arrive just as fast as the pony can get there!"',
+            ).to.be.equal('Your order has been dispatched, and will arrive just as fast as the pony can get there!');
         });
     });
 });

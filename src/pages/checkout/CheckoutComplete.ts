@@ -3,6 +3,9 @@ import { BrowserWrapper } from '../../utils/wrappers/browser/BrowserWrapper';
 import { Page } from '../../utils/pages/Page';
 
 export class CheckoutComplete extends Page {
+    iconOrder: By;
+    headerOrder: By;
+    textOrder: By;
     backHomeButton: By;
     webDriver: WebDriver;
 
@@ -13,7 +16,10 @@ export class CheckoutComplete extends Page {
     }
 
     private initElements() {
-        this.backHomeButton = By.id('#back-to-products');
+        this.iconOrder = By.css('.pony_express');
+        this.headerOrder = By.css('.complete-header');
+        this.textOrder = By.css('.complete-text');
+        this.backHomeButton = By.css('#back-to-products');
     }
 
     public async goToHome() {
