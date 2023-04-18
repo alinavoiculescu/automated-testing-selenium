@@ -11,6 +11,8 @@ import {
     ORDER_TEXT,
     PRODUCTS_PAGE_ROUTE,
     REQUIRED_FIRST_NAME,
+    REQUIRED_LAST_NAME,
+    REQUIRED_POSTAL_CODE,
 } from '../../config/constants';
 
 describe.only('Cart page tests', function () {
@@ -156,6 +158,9 @@ describe.only('Cart page tests', function () {
             await allPages.checkout.fillPostalCode('123');
 
             await allPages.checkout.continueToCheckoutOverview();
+
+            await allPages.checkoutOverview.scrollDown();
+
             await allPages.checkoutOverview.placeOrder();
 
             await seleniumWrappers.waitForPageToLoad();
@@ -204,6 +209,7 @@ describe.only('Cart page tests', function () {
             await allPages.checkout.fillPostalCode('123');
 
             await allPages.checkout.continueToCheckoutOverview();
+            await allPages.checkoutOverview.scrollDown();
             await allPages.checkoutOverview.placeOrder();
 
             await seleniumWrappers.waitForPageToLoad();
@@ -239,6 +245,7 @@ describe.only('Cart page tests', function () {
             await allPages.checkout.fillPostalCode('123');
 
             await allPages.checkout.continueToCheckoutOverview();
+            await allPages.checkoutOverview.scrollDown();
             await allPages.checkoutOverview.placeOrder();
 
             await seleniumWrappers.waitForPageToLoad();
@@ -295,6 +302,7 @@ describe.only('Cart page tests', function () {
             await allPages.checkout.fillPostalCode('123');
 
             await allPages.checkout.continueToCheckoutOverview();
+            await allPages.checkoutOverview.scrollDown();
 
             const checkoutOverviewProductNames: string[] = await allPages.checkoutOverview.getProductNames();
             for (let i = 0; i < checkoutOverviewProductNames.length; i++) {
@@ -338,11 +346,6 @@ describe.only('Cart page tests', function () {
         });
 
         it('Order progress is canceled when "Cancel" button from checkout is clicked', async function () {
-            const productNames: string[] = await allPages.products.getProductNames();
-            for (let i = 0; i < productNames.length; i++) {
-                await allPages.products.addToCart(productNames[i]);
-            }
-
             await allPages.products.goToShoppingCart();
 
             await allPages.cart.scrollDown();
@@ -365,11 +368,6 @@ describe.only('Cart page tests', function () {
         });
 
         it('Order progress is canceled when "Cancel" button from checkout overview is clicked', async function () {
-            const productNames: string[] = await allPages.products.getProductNames();
-            for (let i = 0; i < productNames.length; i++) {
-                await allPages.products.addToCart(productNames[i]);
-            }
-
             await allPages.products.goToShoppingCart();
 
             await allPages.cart.scrollDown();
@@ -402,11 +400,6 @@ describe.only('Cart page tests', function () {
         });
 
         it('Unsuccessful continue to Checkout Overview when First Name field is left blank', async function () {
-            const productNames: string[] = await allPages.products.getProductNames();
-            for (let i = 0; i < productNames.length; i++) {
-                await allPages.products.addToCart(productNames[i]);
-            }
-
             await allPages.products.goToShoppingCart();
 
             await allPages.cart.scrollDown();
@@ -435,10 +428,108 @@ describe.only('Cart page tests', function () {
             const lastName = await webDriver.findElement(allPages.checkout.lastNameInput);
             const postalCode = await webDriver.findElement(allPages.checkout.postalCodeInput);
 
+            expect(await errorMessage.getText(), `Expected error message to contain ${REQUIRED_FIRST_NAME}`).to.contain(
+                REQUIRED_FIRST_NAME,
+            );
+
+            expect(
+                await firstName.getAttribute('class'),
+                'Expected first name input element to contain class `error`',
+            ).to.contain('error');
+
+            expect(
+                await lastName.getAttribute('class'),
+                'Expected last name input element to contain class `error`',
+            ).to.contain('error');
+
+            expect(
+                await postalCode.getAttribute('class'),
+                'Expected postal code input element to contain class `error`',
+            ).to.contain('error');
+        });
+
+        it('Unsuccessful continue to Checkout Overview when Last Name field is left blank', async function () {
+            await allPages.products.goToShoppingCart();
+
+            await allPages.cart.scrollDown();
+
+            await allPages.cart.goToCheckout();
+
+            const expectedUrl = await webDriver.getCurrentUrl();
+
+            await allPages.checkout.fillFirstName('Popescu');
+            await allPages.checkout.fillLastName('');
+            await allPages.checkout.fillPostalCode('');
+
+            await allPages.checkout.continueToCheckoutOverview();
+
+            const actualUrl = await webDriver.getCurrentUrl();
+
+            expect(expectedUrl, 'Expected to remain on checkout page').to.be.equal(actualUrl);
+
+            expect(
+                await seleniumWrappers.isDisplayed(allPages.checkout.errorMessage),
+                'Expected an error message to be displayed',
+            ).to.be.true;
+
+            const errorMessage = await webDriver.findElement(allPages.checkout.errorMessage);
+            const firstName = await webDriver.findElement(allPages.checkout.firstNameInput);
+            const lastName = await webDriver.findElement(allPages.checkout.lastNameInput);
+            const postalCode = await webDriver.findElement(allPages.checkout.postalCodeInput);
+
+            expect(await errorMessage.getText(), `Expected error message to contain ${REQUIRED_LAST_NAME}`).to.contain(
+                REQUIRED_LAST_NAME,
+            );
+
+            expect(
+                await firstName.getAttribute('class'),
+                'Expected first name input element to contain class `error`',
+            ).to.contain('error');
+
+            expect(
+                await lastName.getAttribute('class'),
+                'Expected last name input element to contain class `error`',
+            ).to.contain('error');
+
+            expect(
+                await postalCode.getAttribute('class'),
+                'Expected postal code input element to contain class `error`',
+            ).to.contain('error');
+        });
+
+        it('Unsuccessful continue to Checkout Overview when Zip/Postal Code field is left blank', async function () {
+            await allPages.products.goToShoppingCart();
+
+            await allPages.cart.scrollDown();
+
+            await allPages.cart.goToCheckout();
+
+            const expectedUrl = await webDriver.getCurrentUrl();
+
+            await allPages.checkout.fillFirstName('Popescu');
+            await allPages.checkout.fillLastName('Robertto');
+            await allPages.checkout.fillPostalCode('');
+
+            await allPages.checkout.continueToCheckoutOverview();
+
+            const actualUrl = await webDriver.getCurrentUrl();
+
+            expect(expectedUrl, 'Expected to remain on checkout page').to.be.equal(actualUrl);
+
+            expect(
+                await seleniumWrappers.isDisplayed(allPages.checkout.errorMessage),
+                'Expected an error message to be displayed',
+            ).to.be.true;
+
+            const errorMessage = await webDriver.findElement(allPages.checkout.errorMessage);
+            const firstName = await webDriver.findElement(allPages.checkout.firstNameInput);
+            const lastName = await webDriver.findElement(allPages.checkout.lastNameInput);
+            const postalCode = await webDriver.findElement(allPages.checkout.postalCodeInput);
+
             expect(
                 await errorMessage.getText(),
-                'Expected error message to contain "First Name is required"',
-            ).to.contain('First Name is required');
+                `Expected error message to contain ${REQUIRED_POSTAL_CODE}`,
+            ).to.contain(REQUIRED_POSTAL_CODE);
 
             expect(
                 await firstName.getAttribute('class'),
