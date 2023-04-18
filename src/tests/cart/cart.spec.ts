@@ -53,7 +53,7 @@ describe.only('Cart page tests', function () {
             await seleniumWrappers.waitForPageToLoad();
         });
 
-        it('All products can be removed from the Cart', async function () {
+        it('All products are being removed from the cart when the "Remove" button is clicked for each one from "Cart" page', async function () {
             const productNames: string[] = await allPages.products.getProductNames();
             for (let i = 0; i < productNames.length; i++) {
                 await allPages.products.addToCart(productNames[i]);
@@ -99,7 +99,7 @@ describe.only('Cart page tests', function () {
             );
         });
 
-        it('Random product is being removed from the cart when the “Remove” button is clicked from Cart page', async function () {
+        it('Random product is being removed from the cart when the “Remove” button is clicked from "Cart" page', async function () {
             const productNames: string[] = await allPages.products.getProductNames();
             for (let i = 0; i < productNames.length; i++) {
                 await allPages.products.addToCart(productNames[i]);
