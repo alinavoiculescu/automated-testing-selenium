@@ -8,4 +8,7 @@ export const REQUIRED_USERNAME_ERROR = 'Username is required';
 export const REQUIRED_PASSWORD_ERROR = 'Password is required';
 export const PRODUCTS_PAGE_ROUTE = 'inventory.html';
 export const CART_PAGE_ROUTE = 'cart.html';
+export const REQUIRED_FIRST_NAME = 'First Name is required';
+export const REQUIRED_LAST_NAME = 'Last Name is required';
+export const REQUIRED_POSTAL_CODE = 'Postal Code is required';
 export const ABOUT_PAGE_URL = 'https://saucelabs.com/';

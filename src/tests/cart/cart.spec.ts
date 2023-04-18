@@ -5,7 +5,7 @@ import { AllPages } from '../../utils/pages/AllPages';
 import { Reports } from '../../utils/reports/Reports';
 import { BrowserWrapper } from '../../utils/wrappers/browser/BrowserWrapper';
 import { SeleniumWrappers } from '../../utils/wrappers/selenium/SeleniumWrappers';
-import { CART_PAGE_ROUTE, PRODUCTS_PAGE_ROUTE } from '../../config/constants';
+import { CART_PAGE_ROUTE, PRODUCTS_PAGE_ROUTE, REQUIRED_FIRST_NAME } from '../../config/constants';
 
 describe.only('Cart page tests', function () {
     let webDriver: ThenableWebDriver;
@@ -396,6 +396,61 @@ describe.only('Cart page tests', function () {
             expect(currentUrl, 'Expected redirected URL to contain Products page route').to.include(
                 PRODUCTS_PAGE_ROUTE,
             );
+        });
+
+        it('Unsuccessful continue to Checkout Overview when First Name field is left blank', async function () {
+            const productNames: string[] = await allPages.products.getProductNames();
+            for (let i = 0; i < productNames.length; i++) {
+                await allPages.products.addToCart(productNames[i]);
+            }
+
+            await allPages.products.goToShoppingCart();
+
+            await allPages.cart.scrollDown();
+
+            await allPages.cart.goToCheckout();
+
+            const expectedUrl = await webDriver.getCurrentUrl();
+
+            await allPages.checkout.fillFirstName('');
+            await allPages.checkout.fillLastName('');
+            await allPages.checkout.fillPostalCode('');
+
+            await allPages.checkout.continueToCheckoutOverview();
+
+            const actualUrl = await webDriver.getCurrentUrl();
+
+            expect(expectedUrl, 'Expected to remain on checkout page').to.be.equal(actualUrl);
+
+            expect(
+                await seleniumWrappers.isDisplayed(allPages.checkout.errorMessage),
+                'Expected an error message to be displayed',
+            ).to.be.true;
+
+            const errorMessage = await webDriver.findElement(allPages.checkout.errorMessage);
+            const firstName = await webDriver.findElement(allPages.checkout.firstNameInput);
+            const lastName = await webDriver.findElement(allPages.checkout.lastNameInput);
+            const postalCode = await webDriver.findElement(allPages.checkout.postalCodeInput);
+
+            expect(
+                await errorMessage.getText(),
+                'Expected error message to contain "First Name is required"',
+            ).to.contain('First Name is required');
+
+            expect(
+                await firstName.getAttribute('class'),
+                'Expected first name input element to contain class `error`',
+            ).to.contain('error');
+
+            expect(
+                await lastName.getAttribute('class'),
+                'Expected last name input element to contain class `error`',
+            ).to.contain('error');
+
+            expect(
+                await postalCode.getAttribute('class'),
+                'Expected postal code input element to contain class `error`',
+            ).to.contain('error');
         });
     });
 });

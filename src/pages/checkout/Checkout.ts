@@ -8,6 +8,7 @@ export class Checkout extends Page {
     firstNameInput: By;
     lastNameInput: By;
     postalCodeInput: By;
+    errorMessage: By;
     webDriver: WebDriver;
 
     constructor(browserWrapper: BrowserWrapper) {
@@ -22,6 +23,7 @@ export class Checkout extends Page {
         this.firstNameInput = By.css('#first-name');
         this.lastNameInput = By.css('#last-name');
         this.postalCodeInput = By.css('#postal-code');
+        this.errorMessage = By.css('.error-message-container');
     }
 
     public async fillFirstName(firstName: string) {
