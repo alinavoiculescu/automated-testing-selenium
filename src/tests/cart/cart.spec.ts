@@ -254,5 +254,76 @@ describe.only('Cart page tests', function () {
 
             assert.strictEqual(cartProductNames.length, 0, `Expected the cart to be empty`);
         });
+
+        it('All products have their corresponding name, description, quantity and price when comparing the name, description and price from Cart page with the one from Checkout Overview page', async function () {
+            const productNames: string[] = await allPages.products.getProductNames();
+            for (let i = 0; i < productNames.length; i++) {
+                await allPages.products.addToCart(productNames[i]);
+            }
+
+            await allPages.products.goToShoppingCart();
+
+            const cartProducts: string[] = await allPages.cart.getProductNames();
+
+            const cartProductsDescriptions: string[] = [];
+
+            const cartProductsQuantitys: number[] = [];
+
+            const cartProductPrices: number[] = [];
+
+            for (let i = 0; i < cartProducts.length; i++) {
+                cartProductsDescriptions[i] = await allPages.cart.getProductDescriptionByName(cartProducts[i]);
+                cartProductsQuantitys[i] = await allPages.cart.getProductQuantity(cartProducts[i]);
+                cartProductPrices[i] = await allPages.cart.getProductPriceByName(cartProducts[i]);
+            }
+
+            await allPages.cart.goToCheckout();
+
+            await allPages.checkout.fillFirstName('Popescu');
+            await allPages.checkout.fillLastName('Robertto');
+            await allPages.checkout.fillPostalCode('123');
+
+            await allPages.checkout.continueToCheckoutOverview();
+
+            const checkoutOverviewProductNames: string[] = await allPages.checkoutOverview.getProductNames();
+            for (let i = 0; i < checkoutOverviewProductNames.length; i++) {
+                const checkoutOverviewProductName = checkoutOverviewProductNames[i];
+
+                assert.strictEqual(
+                    checkoutOverviewProductName,
+                    cartProducts[i],
+                    `Expected the product ${cartProducts[i]} from cart page to match with the ${checkoutOverviewProductName} from checkout overview page`,
+                );
+
+                const checkoutOverviewProductDescription: string =
+                    await allPages.checkoutOverview.getProductDescriptionByName(checkoutOverviewProductName);
+
+                assert.strictEqual(
+                    checkoutOverviewProductDescription,
+                    cartProductsDescriptions[i],
+                    `Expected the description for ${checkoutOverviewProductName} to match the description provided in the list of cart products`,
+                );
+
+                const checkoutOverviewProductQuantity: number = await allPages.checkoutOverview.getProductQuantity(
+                    checkoutOverviewProductName,
+                );
+
+                assert.strictEqual(
+                    checkoutOverviewProductQuantity,
+                    cartProductsQuantitys[i],
+                    `Expected the description for ${checkoutOverviewProductQuantity} to match the quantity provided in the list of cart products`,
+                );
+
+                const checkoutOverviewProductPrice: number = await allPages.checkoutOverview.getProductPriceByName(
+                    checkoutOverviewProductName,
+                );
+
+                assert.strictEqual(
+                    checkoutOverviewProductPrice,
+                    cartProductPrices[i],
+                    `Expected the price for ${checkoutOverviewProductPrice} to match the quantity provided in the list of cart products`,
+                );
+            }
+        });
     });
 });
