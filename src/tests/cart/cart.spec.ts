@@ -10,9 +10,9 @@ import {
     ORDER_HEADER_TEXT,
     ORDER_TEXT,
     PRODUCTS_PAGE_ROUTE,
-    REQUIRED_FIRST_NAME,
-    REQUIRED_LAST_NAME,
-    REQUIRED_POSTAL_CODE,
+    REQUIRED_FIRST_NAME_ERROR,
+    REQUIRED_LAST_NAME_ERROR,
+    REQUIRED_POSTAL_CODE_ERROR,
 } from '../../config/constants';
 
 describe('Cart page tests', function () {
@@ -428,9 +428,10 @@ describe('Cart page tests', function () {
             const lastName = await webDriver.findElement(allPages.checkout.lastNameInput);
             const postalCode = await webDriver.findElement(allPages.checkout.postalCodeInput);
 
-            expect(await errorMessage.getText(), `Expected error message to contain ${REQUIRED_FIRST_NAME}`).to.contain(
-                REQUIRED_FIRST_NAME,
-            );
+            expect(
+                await errorMessage.getText(),
+                `Expected error message to contain ${REQUIRED_FIRST_NAME_ERROR}`,
+            ).to.contain(REQUIRED_FIRST_NAME_ERROR);
 
             expect(
                 await firstName.getAttribute('class'),
@@ -477,9 +478,10 @@ describe('Cart page tests', function () {
             const lastName = await webDriver.findElement(allPages.checkout.lastNameInput);
             const postalCode = await webDriver.findElement(allPages.checkout.postalCodeInput);
 
-            expect(await errorMessage.getText(), `Expected error message to contain ${REQUIRED_LAST_NAME}`).to.contain(
-                REQUIRED_LAST_NAME,
-            );
+            expect(
+                await errorMessage.getText(),
+                `Expected error message to contain ${REQUIRED_LAST_NAME_ERROR}`,
+            ).to.contain(REQUIRED_LAST_NAME_ERROR);
 
             expect(
                 await firstName.getAttribute('class'),
@@ -528,8 +530,8 @@ describe('Cart page tests', function () {
 
             expect(
                 await errorMessage.getText(),
-                `Expected error message to contain ${REQUIRED_POSTAL_CODE}`,
-            ).to.contain(REQUIRED_POSTAL_CODE);
+                `Expected error message to contain ${REQUIRED_POSTAL_CODE_ERROR}`,
+            ).to.contain(REQUIRED_POSTAL_CODE_ERROR);
 
             expect(
                 await firstName.getAttribute('class'),
