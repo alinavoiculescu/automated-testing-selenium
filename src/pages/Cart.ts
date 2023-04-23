@@ -88,7 +88,8 @@ export class Cart extends Page {
             if (name === productName) {
                 const priceString = await (await items[i].findElement(this.productPrice)).getText();
                 const price = parseFloat(priceString.replace('$', ''));
-                return price;
+                if (!Number.isNaN(price)) return price;
+                else throw new Error(`Price ${priceString} is not a number`);
             }
         }
 
