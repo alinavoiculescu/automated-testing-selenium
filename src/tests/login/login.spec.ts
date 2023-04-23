@@ -211,4 +211,16 @@ describe('Login page tests', function () {
         const loginSuccessfully = await allPages.login.login(config.credentials.username, config.credentials.password);
         assert(loginSuccessfully, 'Expected to be logged in successfully and to be redirected to the next page');
     });
+
+    it('Login page should not displayed when user is logged in and tries to access login page', async function () {
+        await webDriver.get(config.websiteUrl);
+        const loginSuccessfully = await allPages.login.login(config.credentials.username, config.credentials.password);
+        assert(loginSuccessfully, 'Expected to be logged in successfully and to be redirected to the next page');
+        await webDriver.get(config.websiteUrl);
+        await seleniumWrappers.waitForPageToLoad();
+        expect(
+            await webDriver.getCurrentUrl(),
+            'Expected login page to not be displayed when user is logged in',
+        ).to.not.eq(config.websiteUrl);
+    });
 });

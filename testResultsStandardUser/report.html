@@ -1,0 +1,1210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mochawesome Report Card</title>
+    
+    <link rel="stylesheet" href="css/mochawesome.css">
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="report-info-cnt">
+          <h1 class="report-title">automated-testing-selenium</h1>
+          <h3 class="report-date">Sunday, April 23 2023, 03:49am</h3>
+        </div>
+        <div class="nav-right">
+          <div class="quick-summary-cnt">
+              <ul class="list-unstyled quick-summary">
+                <li class="qs-item summary-duration" title="Duration">6:24<span>M</span></li>
+                <li class="qs-item summary-suites" title="Suites">9</li>
+                <li class="qs-item summary-tests" title="Tests">45</li>
+                <li class="qs-item summary-passes" title="Passed" data-filter="passed">43</li>
+                <li class="qs-item summary-failures" title="Failed" data-filter="failed">2</li>
+                <li class="qs-item summary-pending" title="Pending" data-filter="pending">0</li>
+              </ul>          </div>
+          <button class="nav-menu-btn open-menu"><i class="icon-menu"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Report Summary -->
+    <div class="summary">
+      <div class="container">
+          <div class="row">
+            <div class="summary-col summary-duration">
+              <h1 class="summary-count">6:24<span>M</span></h1>
+              <h4 class="summary-label">M</h4>
+            </div>
+            <div class="summary-col summary-suites" title="Suites">
+              <h1 class="summary-count">9</h1>
+              <h4 class="summary-label">Suites</h4>
+            </div>
+            <div class="summary-col summary-tests" title="Tests">
+              <h1 class="summary-count">45</h1>
+              <h4 class="summary-label">Tests</h4>
+            </div>
+            <div class="summary-col summary-passes" data-filter="passed" title="Passed">
+              <h1 class="summary-count">43</h1>
+              <h4 class="summary-label">Passed</h4>
+            </div>
+            <div class="summary-col summary-failures" data-filter="failed" title="Failed">
+              <h1 class="summary-count">2</h1>
+              <h4 class="summary-label">Failed</h4>
+            </div>
+            <div class="summary-col summary-pending" data-filter="pending" title="Pending">
+              <h1 class="summary-count">0</h1>
+              <h4 class="summary-label">Pending</h4>
+            </div>
+          </div>      </div>
+    </div>
+    <div class="statusbar">
+      <div class="container">
+          <div class="row">
+            <div class="status-item status-item-pending-pct">0% Pending</div>
+            <div class="status-item status-item-passing-pct success">95.6% Passing</div>
+          </div>      </div>
+    </div>
+
+    <!-- Suites -->
+    <div class="details container">
+            <section class="suite-wrap">
+          <div id="e798b27c-9204-4a1d-9b55-3075d74877a6" class="suite has-suites">
+            <h3 class="suite-title">Cart page tests</h3>
+            <h5 class="suite-filename">\src\tests\cart\cart.spec.ts</h5>
+        
+              <section class="suite-wrap">
+          <div id="22c678a2-ae07-4f64-9bdd-737e8c3d6978" class="suite has-tests has-passed">
+            <h3 class="suite-title">User is logged out</h3>
+            <h5 class="suite-filename">\src\tests\cart\cart.spec.ts</h5>
+            <!-- Suite Chart -->
+            <div class="suite-chart-wrap">
+              <canvas id="22c678a2-ae07-4f64-9bdd-737e8c3d6978" class="suite-chart" width="50" height="50" data-total-passes="1" data-total-failures="0" data-total-pending="0" data-total-skipped="0"></canvas>
+            </div>
+            <div class="suite-data-wrap">
+              <!-- Suite Summary -->
+              <ul class="suite-summary list-unstyled">
+                <li class="suite-summary-item duration">10.174 s</li>
+                <li class="suite-summary-item tests">1</li>
+                <li class="suite-summary-item passed">1</li>
+                <li class="suite-summary-item failed">0</li>
+                <li class="suite-summary-item pending">0</li>
+              </ul>
+              <!-- Test Info -->
+              <div class="suite-test-wrap">
+                <div class="suite-test-header" data-toggle="collapse" data-target="#22c678a2-ae07-4f64-9bdd-737e8c3d6978-test-list">
+                  <h4 class="suite-test-header-title">Tests</h4>
+                </div>
+                <div id="22c678a2-ae07-4f64-9bdd-737e8c3d6978-test-list" class="list-group test-list collapse in">
+                    <div id="0ae09525-c596-408c-9e7c-e45c7882e80e" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Cannot access cart page when user is not logged in
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#0ae09525-c596-408c-9e7c-e45c7882e80e > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#0ae09525-c596-408c-9e7c-e45c7882e80e > .test-code.collapse">Code </button>
+              <span class="test-duration slow">10.174 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">await</span> webDriver.get(config_1.config.websiteUrl + constants_1.CART_PAGE_ROUTE);<br>            <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad(<span class="hljs-number">10000</span>);<br>            <span class="hljs-keyword">const</span> currentUrl = <span class="hljs-keyword">await</span> webDriver.getCurrentUrl();<br>            (<span class="hljs-number">0</span>, chai_1.expect)(currentUrl, <span class="hljs-string">'Expected redirected URL to not contain cart page route'</span>).to.not.include(constants_1.CART_PAGE_ROUTE);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(currentUrl, <span class="hljs-string">'Expected redirected URL to be the Login page'</span>).to.be.equal(config_1.config.websiteUrl);</code></pre>
+          </div>
+        </div>        </div>
+              </div>
+            </div>
+        
+        
+          </div>
+        </section>
+              <section class="suite-wrap">
+          <div id="469fb82d-c67e-487e-a10a-231e5a9b255d" class="suite has-tests has-passed">
+            <h3 class="suite-title">User is logged in</h3>
+            <h5 class="suite-filename">\src\tests\cart\cart.spec.ts</h5>
+            <!-- Suite Chart -->
+            <div class="suite-chart-wrap">
+              <canvas id="469fb82d-c67e-487e-a10a-231e5a9b255d" class="suite-chart" width="50" height="50" data-total-passes="12" data-total-failures="0" data-total-pending="0" data-total-skipped="0"></canvas>
+            </div>
+            <div class="suite-data-wrap">
+              <!-- Suite Summary -->
+              <ul class="suite-summary list-unstyled">
+                <li class="suite-summary-item duration">1:01.455 m</li>
+                <li class="suite-summary-item tests">12</li>
+                <li class="suite-summary-item passed">12</li>
+                <li class="suite-summary-item failed">0</li>
+                <li class="suite-summary-item pending">0</li>
+              </ul>
+              <!-- Test Info -->
+              <div class="suite-test-wrap">
+                <div class="suite-test-header" data-toggle="collapse" data-target="#469fb82d-c67e-487e-a10a-231e5a9b255d-test-list">
+                  <h4 class="suite-test-header-title">Tests</h4>
+                </div>
+                <div id="469fb82d-c67e-487e-a10a-231e5a9b255d-test-list" class="list-group test-list collapse in">
+                    <div id="f73d6874-cc23-4ef4-8ca7-e2305b954787" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              All products are being removed from the cart when the &quot;Remove&quot; button is clicked for each one from &quot;Cart&quot; page
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#f73d6874-cc23-4ef4-8ca7-e2305b954787 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#f73d6874-cc23-4ef4-8ca7-e2305b954787 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">2.375 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> productNames = <span class="hljs-keyword">await</span> allPages.products.getProductNames();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; productNames.length; i++) {<br>                <span class="hljs-keyword">await</span> allPages.products.addToCart(productNames[i]);<br>            }<br>            <span class="hljs-keyword">await</span> allPages.products.goToShoppingCart();<br>            <span class="hljs-keyword">const</span> cartProductNames = <span class="hljs-keyword">await</span> allPages.cart.getProductNames();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; cartProductNames.length; i++) {<br>                <span class="hljs-keyword">const</span> initialShoppingBadgeValue = <span class="hljs-keyword">await</span> allPages.cart.getShoppingCartBadgeValue();<br>                <span class="hljs-keyword">await</span> allPages.cart.removeFromCart(cartProductNames[i]);<br>                <span class="hljs-keyword">const</span> shoppingBadgeValueAfterRemovedProduct = <span class="hljs-keyword">await</span> allPages.cart.getShoppingCartBadgeValue();<br>                <span class="hljs-keyword">const</span> deletedProductQuantity = <span class="hljs-keyword">await</span> allPages.cart.getProductQuantity(cartProductNames[i]);<br>                chai_1.assert.strictEqual(<span class="hljs-number">0</span>, deletedProductQuantity, <span class="hljs-string">`Expected the quantity for <span class="hljs-subst">${cartProductNames[i]}</span> to be 0 after it was removed from the cart`</span>);<br>                chai_1.assert.strictEqual(initialShoppingBadgeValue - <span class="hljs-number">1</span>, shoppingBadgeValueAfterRemovedProduct, <span class="hljs-string">`Expected the shopping cart value to be initial value - 1`</span>);<br>            }<br>            <span class="hljs-keyword">const</span> updatedShoppingCartValue = <span class="hljs-keyword">await</span> allPages.cart.getShoppingCartBadgeValue();<br>            <span class="hljs-keyword">const</span> expectedShoppingCartValue = <span class="hljs-number">0</span>;<br>            chai_1.assert.strictEqual(updatedShoppingCartValue, expectedShoppingCartValue, <span class="hljs-string">`Expected the shopping cart value to be updated to 0`</span>);<br>            <span class="hljs-keyword">const</span> cartProductNamesAfterRemove = <span class="hljs-keyword">await</span> allPages.cart.getProductNames();<br>            chai_1.assert.strictEqual(cartProductNamesAfterRemove.length, <span class="hljs-number">0</span>, <span class="hljs-string">`Expected all the products have been removed from the cart`</span>);</code></pre>
+          </div>
+        </div>            <div id="58224c67-59c8-4959-b9da-548097425888" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Random product is being removed from the cart when the “Remove” button is clicked from &quot;Cart&quot; page
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#58224c67-59c8-4959-b9da-548097425888 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#58224c67-59c8-4959-b9da-548097425888 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">1.919 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> productNames = <span class="hljs-keyword">await</span> allPages.products.getProductNames();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; productNames.length; i++) {<br>                <span class="hljs-keyword">await</span> allPages.products.addToCart(productNames[i]);<br>            }<br>            <span class="hljs-keyword">await</span> allPages.products.goToShoppingCart();<br>            <span class="hljs-keyword">const</span> initialShoppingCartValue = <span class="hljs-keyword">await</span> allPages.cart.getShoppingCartBadgeValue();<br>            <span class="hljs-keyword">const</span> cartProductNames = <span class="hljs-keyword">await</span> allPages.cart.getProductNames();<br>            <span class="hljs-keyword">const</span> randomIndex = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * cartProductNames.length);<br>            <span class="hljs-keyword">const</span> randomProductName = cartProductNames[randomIndex];<br>            <span class="hljs-keyword">await</span> allPages.cart.removeFromCart(randomProductName);<br>            <span class="hljs-keyword">const</span> updatedShoppingCartValue = <span class="hljs-keyword">await</span> allPages.cart.getShoppingCartBadgeValue();<br>            <span class="hljs-keyword">const</span> expectedShoppingCartValue = initialShoppingCartValue - updatedShoppingCartValue;<br>            chai_1.assert.strictEqual(<span class="hljs-number">1</span>, expectedShoppingCartValue, <span class="hljs-string">`Expected the difference between initial shopping cart value and the current value to be 1`</span>);<br>            <span class="hljs-keyword">const</span> quantityOfRandomProductAfterRemove = <span class="hljs-keyword">await</span> allPages.cart.getProductQuantity(randomProductName);<br>            chai_1.assert.strictEqual(quantityOfRandomProductAfterRemove, <span class="hljs-number">0</span>, <span class="hljs-string">`Expected the quantity of the random product to be 0 after remove`</span>);</code></pre>
+          </div>
+        </div>            <div id="262ce684-8a34-42e5-8f13-476e48336e8d" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              An order can be placed when &quot;Finish&quot; button from checkout overview is clicked
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#262ce684-8a34-42e5-8f13-476e48336e8d > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#262ce684-8a34-42e5-8f13-476e48336e8d > .test-code.collapse">Code </button>
+              <span class="test-duration slow">6.31 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> productNames = <span class="hljs-keyword">await</span> allPages.products.getProductNames();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; productNames.length; i++) {<br>                <span class="hljs-keyword">await</span> allPages.products.addToCart(productNames[i]);<br>            }<br>            <span class="hljs-keyword">await</span> allPages.products.goToShoppingCart();<br>            <span class="hljs-keyword">await</span> allPages.cart.scrollDown();<br>            <span class="hljs-keyword">await</span> allPages.cart.goToCheckout();<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillFirstName(<span class="hljs-string">'Popescu'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillLastName(<span class="hljs-string">'Robertto'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillPostalCode(<span class="hljs-string">'123'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.continueToCheckoutOverview();<br>            <span class="hljs-keyword">await</span> allPages.checkoutOverview.scrollDown();<br>            <span class="hljs-keyword">await</span> allPages.checkoutOverview.placeOrder();<br>            <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> seleniumWrappers.isDisplayed(allPages.checkoutComplete.iconOrder), <span class="hljs-string">'Expected the icon to be displayed'</span>).to.be.true;<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> seleniumWrappers.isDisplayed(allPages.checkoutComplete.headerOrder), <span class="hljs-string">'Expected the order header to be displayed'</span>).to.be.true;<br>            <span class="hljs-keyword">const</span> headerOrderElement = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.checkoutComplete.headerOrder);<br>            <span class="hljs-keyword">const</span> headerOrderText = <span class="hljs-keyword">await</span> headerOrderElement.getText();<br>            (<span class="hljs-number">0</span>, chai_1.expect)(headerOrderText, <span class="hljs-string">`Expected order header text to be "<span class="hljs-subst">${constants_1.ORDER_HEADER_TEXT}</span>"`</span>).to.be.equal(constants_1.ORDER_HEADER_TEXT);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> seleniumWrappers.isDisplayed(allPages.checkoutComplete.textOrder), <span class="hljs-string">'Expected the order text to be displayed'</span>).to.be.true;<br>            <span class="hljs-keyword">const</span> textOrderElement = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.checkoutComplete.textOrder);<br>            <span class="hljs-keyword">const</span> textOrderText = <span class="hljs-keyword">await</span> textOrderElement.getText();<br>            (<span class="hljs-number">0</span>, chai_1.expect)(textOrderText, <span class="hljs-string">`Expected order text to be "<span class="hljs-subst">${constants_1.ORDER_TEXT}</span>"`</span>).to.be.equal(constants_1.ORDER_TEXT);</code></pre>
+          </div>
+        </div>            <div id="e508d61f-9374-4eef-a61f-a7ed6f26c63a" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Home page is displayed when &quot;Back Home&quot; button is clicked after a successfully placed order
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#e508d61f-9374-4eef-a61f-a7ed6f26c63a > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#e508d61f-9374-4eef-a61f-a7ed6f26c63a > .test-code.collapse">Code </button>
+              <span class="test-duration slow">8.45 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> productNames = <span class="hljs-keyword">await</span> allPages.products.getProductNames();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; productNames.length; i++) {<br>                <span class="hljs-keyword">await</span> allPages.products.addToCart(productNames[i]);<br>            }<br>            <span class="hljs-keyword">await</span> allPages.products.goToShoppingCart();<br>            <span class="hljs-keyword">await</span> allPages.cart.scrollDown();<br>            <span class="hljs-keyword">await</span> allPages.cart.goToCheckout();<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillFirstName(<span class="hljs-string">'Popescu'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillLastName(<span class="hljs-string">'Robertto'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillPostalCode(<span class="hljs-string">'123'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.continueToCheckoutOverview();<br>            <span class="hljs-keyword">await</span> allPages.checkoutOverview.scrollDown();<br>            <span class="hljs-keyword">await</span> allPages.checkoutOverview.placeOrder();<br>            <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> seleniumWrappers.isDisplayed(allPages.checkoutComplete.backHomeButton), <span class="hljs-string">'Expected the back to home button to be displayed'</span>).to.be.true;<br>            <span class="hljs-keyword">await</span> allPages.checkoutComplete.goToHome();<br>            <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            <span class="hljs-keyword">const</span> currentUrl = <span class="hljs-keyword">await</span> webDriver.getCurrentUrl();<br>            (<span class="hljs-number">0</span>, chai_1.expect)(currentUrl, <span class="hljs-string">'Expected redirected URL to contain Products page route'</span>).to.include(constants_1.PRODUCTS_PAGE_ROUTE);</code></pre>
+          </div>
+        </div>            <div id="74dc04bb-73c7-4aea-baa9-0500a9360175" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              The cart is empty after finishing an order
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#74dc04bb-73c7-4aea-baa9-0500a9360175 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#74dc04bb-73c7-4aea-baa9-0500a9360175 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">10.112 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> productNames = <span class="hljs-keyword">await</span> allPages.products.getProductNames();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; productNames.length; i++) {<br>                <span class="hljs-keyword">await</span> allPages.products.addToCart(productNames[i]);<br>            }<br>            <span class="hljs-keyword">await</span> allPages.products.goToShoppingCart();<br>            <span class="hljs-keyword">await</span> allPages.cart.scrollDown();<br>            <span class="hljs-keyword">await</span> allPages.cart.goToCheckout();<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillFirstName(<span class="hljs-string">'Popescu'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillLastName(<span class="hljs-string">'Robertto'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillPostalCode(<span class="hljs-string">'123'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.continueToCheckoutOverview();<br>            <span class="hljs-keyword">await</span> allPages.checkoutOverview.scrollDown();<br>            <span class="hljs-keyword">await</span> allPages.checkoutOverview.placeOrder();<br>            <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            <span class="hljs-keyword">await</span> allPages.checkoutComplete.goToHome();<br>            <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            <span class="hljs-keyword">const</span> currentUrl = <span class="hljs-keyword">await</span> webDriver.getCurrentUrl();<br>            (<span class="hljs-number">0</span>, chai_1.expect)(currentUrl, <span class="hljs-string">'Expected redirected URL to contain Products page route'</span>).to.include(constants_1.PRODUCTS_PAGE_ROUTE);<br>            <span class="hljs-keyword">const</span> updatedShoppingBadgeValue = <span class="hljs-keyword">await</span> allPages.products.getShoppingCartBadgeValue();<br>            chai_1.assert.strictEqual(updatedShoppingBadgeValue, <span class="hljs-number">0</span>, <span class="hljs-string">`Expected the shopping badge value to be 0`</span>);<br>            <span class="hljs-keyword">await</span> allPages.products.goToShoppingCart();<br>            <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            <span class="hljs-keyword">const</span> cartProductNames = <span class="hljs-keyword">await</span> allPages.cart.getProductNames();<br>            chai_1.assert.strictEqual(cartProductNames.length, <span class="hljs-number">0</span>, <span class="hljs-string">`Expected the cart to be empty`</span>);</code></pre>
+          </div>
+        </div>            <div id="f8c98112-ae0b-4cab-8163-cefac3378e14" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              All products have their corresponding name, description, quantity and price when comparing the name, description and price from Cart page with the one from Checkout Overview page
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#f8c98112-ae0b-4cab-8163-cefac3378e14 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#f8c98112-ae0b-4cab-8163-cefac3378e14 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">6.304 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> productNames = <span class="hljs-keyword">await</span> allPages.products.getProductNames();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; productNames.length; i++) {<br>                <span class="hljs-keyword">await</span> allPages.products.addToCart(productNames[i]);<br>            }<br>            <span class="hljs-keyword">await</span> allPages.products.goToShoppingCart();<br>            <span class="hljs-keyword">await</span> allPages.cart.scrollDown();<br>            <span class="hljs-keyword">const</span> cartProducts = <span class="hljs-keyword">await</span> allPages.cart.getProductNames();<br>            <span class="hljs-keyword">const</span> cartProductsDescriptions = [];<br>            <span class="hljs-keyword">const</span> cartProductsQuantitys = [];<br>            <span class="hljs-keyword">const</span> cartProductPrices = [];<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; cartProducts.length; i++) {<br>                cartProductsDescriptions[i] = <span class="hljs-keyword">await</span> allPages.cart.getProductDescriptionByName(cartProducts[i]);<br>                cartProductsQuantitys[i] = <span class="hljs-keyword">await</span> allPages.cart.getProductQuantity(cartProducts[i]);<br>                cartProductPrices[i] = <span class="hljs-keyword">await</span> allPages.cart.getProductPriceByName(cartProducts[i]);<br>            }<br>            <span class="hljs-keyword">await</span> allPages.cart.goToCheckout();<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillFirstName(<span class="hljs-string">'Popescu'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillLastName(<span class="hljs-string">'Robertto'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillPostalCode(<span class="hljs-string">'123'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.continueToCheckoutOverview();<br>            <span class="hljs-keyword">await</span> allPages.checkoutOverview.scrollDown();<br>            <span class="hljs-keyword">const</span> checkoutOverviewProductNames = <span class="hljs-keyword">await</span> allPages.checkoutOverview.getProductNames();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; checkoutOverviewProductNames.length; i++) {<br>                <span class="hljs-keyword">const</span> checkoutOverviewProductName = checkoutOverviewProductNames[i];<br>                chai_1.assert.strictEqual(checkoutOverviewProductName, cartProducts[i], <span class="hljs-string">`Expected the product <span class="hljs-subst">${cartProducts[i]}</span> from cart page to match with the <span class="hljs-subst">${checkoutOverviewProductName}</span> from checkout overview page`</span>);<br>                <span class="hljs-keyword">const</span> checkoutOverviewProductDescription = <span class="hljs-keyword">await</span> allPages.checkoutOverview.getProductDescriptionByName(checkoutOverviewProductName);<br>                chai_1.assert.strictEqual(checkoutOverviewProductDescription, cartProductsDescriptions[i], <span class="hljs-string">`Expected the description for <span class="hljs-subst">${checkoutOverviewProductName}</span> to match the description provided in the list of cart products`</span>);<br>                <span class="hljs-keyword">const</span> checkoutOverviewProductQuantity = <span class="hljs-keyword">await</span> allPages.checkoutOverview.getProductQuantity(checkoutOverviewProductName);<br>                chai_1.assert.strictEqual(checkoutOverviewProductQuantity, cartProductsQuantitys[i], <span class="hljs-string">`Expected the description for <span class="hljs-subst">${checkoutOverviewProductQuantity}</span> to match the quantity provided in the list of cart products`</span>);<br>                <span class="hljs-keyword">const</span> checkoutOverviewProductPrice = <span class="hljs-keyword">await</span> allPages.checkoutOverview.getProductPriceByName(checkoutOverviewProductName);<br>                chai_1.assert.strictEqual(checkoutOverviewProductPrice, cartProductPrices[i], <span class="hljs-string">`Expected the price for <span class="hljs-subst">${checkoutOverviewProductPrice}</span> to match the quantity provided in the list of cart products`</span>);<br>            }</code></pre>
+          </div>
+        </div>            <div id="eb05e30f-626e-4fdf-81b2-2b5d108ba889" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Order progress is canceled when &quot;Cancel&quot; button from checkout is clicked
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#eb05e30f-626e-4fdf-81b2-2b5d108ba889 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#eb05e30f-626e-4fdf-81b2-2b5d108ba889 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">5.189 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">await</span> allPages.products.goToShoppingCart();<br>            <span class="hljs-keyword">await</span> allPages.cart.scrollDown();<br>            <span class="hljs-keyword">await</span> allPages.cart.goToCheckout();<br>            <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> seleniumWrappers.isDisplayed(allPages.checkout.cancelCheckoutButton), <span class="hljs-string">'Expected the cancel button to be displayed'</span>).to.be.true;<br>            <span class="hljs-keyword">await</span> allPages.checkout.cancelProgress();<br>            <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            <span class="hljs-keyword">const</span> currentUrl = <span class="hljs-keyword">await</span> webDriver.getCurrentUrl();<br>            (<span class="hljs-number">0</span>, chai_1.expect)(currentUrl, <span class="hljs-string">'Expected redirected URL to contain Cart page route'</span>).to.include(constants_1.CART_PAGE_ROUTE);</code></pre>
+          </div>
+        </div>            <div id="daaeda20-9ba0-4f3b-a809-2a2549591525" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Order progress is canceled when &quot;Cancel&quot; button from checkout overview is clicked
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#daaeda20-9ba0-4f3b-a809-2a2549591525 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#daaeda20-9ba0-4f3b-a809-2a2549591525 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">6.430 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">await</span> allPages.products.goToShoppingCart();<br>            <span class="hljs-keyword">await</span> allPages.cart.scrollDown();<br>            <span class="hljs-keyword">await</span> allPages.cart.goToCheckout();<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillFirstName(<span class="hljs-string">'Popescu'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillLastName(<span class="hljs-string">'Robertto'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillPostalCode(<span class="hljs-string">'123'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.continueToCheckoutOverview();<br>            <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            <span class="hljs-keyword">await</span> allPages.checkoutOverview.scrollDown();<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> seleniumWrappers.isDisplayed(allPages.checkoutOverview.cancelOrderButton), <span class="hljs-string">'Expected the cancel button to be displayed'</span>).to.be.true;<br>            <span class="hljs-keyword">await</span> allPages.checkoutOverview.cancelCheckout();<br>            <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            <span class="hljs-keyword">const</span> currentUrl = <span class="hljs-keyword">await</span> webDriver.getCurrentUrl();<br>            (<span class="hljs-number">0</span>, chai_1.expect)(currentUrl, <span class="hljs-string">'Expected redirected URL to contain Products page route'</span>).to.include(constants_1.PRODUCTS_PAGE_ROUTE);</code></pre>
+          </div>
+        </div>            <div id="44c6a89e-9f94-4feb-a899-656c501a5c28" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Unsuccessful continue to Checkout Overview when First Name field is left blank
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#44c6a89e-9f94-4feb-a899-656c501a5c28 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#44c6a89e-9f94-4feb-a899-656c501a5c28 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">3.356 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">await</span> allPages.products.goToShoppingCart();<br>            <span class="hljs-keyword">await</span> allPages.cart.scrollDown();<br>            <span class="hljs-keyword">await</span> allPages.cart.goToCheckout();<br>            <span class="hljs-keyword">const</span> expectedUrl = <span class="hljs-keyword">await</span> webDriver.getCurrentUrl();<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillFirstName(<span class="hljs-string">''</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillLastName(<span class="hljs-string">''</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillPostalCode(<span class="hljs-string">''</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.continueToCheckoutOverview();<br>            <span class="hljs-keyword">const</span> actualUrl = <span class="hljs-keyword">await</span> webDriver.getCurrentUrl();<br>            (<span class="hljs-number">0</span>, chai_1.expect)(expectedUrl, <span class="hljs-string">'Expected to remain on checkout page'</span>).to.be.equal(actualUrl);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> seleniumWrappers.isDisplayed(allPages.checkout.errorMessage), <span class="hljs-string">'Expected an error message to be displayed'</span>).to.be.true;<br>            <span class="hljs-keyword">const</span> errorMessage = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.checkout.errorMessage);<br>            <span class="hljs-keyword">const</span> firstName = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.checkout.firstNameInput);<br>            <span class="hljs-keyword">const</span> lastName = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.checkout.lastNameInput);<br>            <span class="hljs-keyword">const</span> postalCode = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.checkout.postalCodeInput);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> errorMessage.getText(), <span class="hljs-string">`Expected error message to contain <span class="hljs-subst">${constants_1.REQUIRED_FIRST_NAME_ERROR}</span>`</span>).to.contain(constants_1.REQUIRED_FIRST_NAME_ERROR);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> firstName.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected first name input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> lastName.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected last name input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> postalCode.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected postal code input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);</code></pre>
+          </div>
+        </div>            <div id="bf26076a-2aac-4421-95ae-010529970c71" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Unsuccessful continue to Checkout Overview when Last Name field is left blank
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#bf26076a-2aac-4421-95ae-010529970c71 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#bf26076a-2aac-4421-95ae-010529970c71 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">3.360 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">await</span> allPages.products.goToShoppingCart();<br>            <span class="hljs-keyword">await</span> allPages.cart.scrollDown();<br>            <span class="hljs-keyword">await</span> allPages.cart.goToCheckout();<br>            <span class="hljs-keyword">const</span> expectedUrl = <span class="hljs-keyword">await</span> webDriver.getCurrentUrl();<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillFirstName(<span class="hljs-string">'Popescu'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillLastName(<span class="hljs-string">''</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillPostalCode(<span class="hljs-string">''</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.continueToCheckoutOverview();<br>            <span class="hljs-keyword">const</span> actualUrl = <span class="hljs-keyword">await</span> webDriver.getCurrentUrl();<br>            (<span class="hljs-number">0</span>, chai_1.expect)(expectedUrl, <span class="hljs-string">'Expected to remain on checkout page'</span>).to.be.equal(actualUrl);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> seleniumWrappers.isDisplayed(allPages.checkout.errorMessage), <span class="hljs-string">'Expected an error message to be displayed'</span>).to.be.true;<br>            <span class="hljs-keyword">const</span> errorMessage = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.checkout.errorMessage);<br>            <span class="hljs-keyword">const</span> firstName = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.checkout.firstNameInput);<br>            <span class="hljs-keyword">const</span> lastName = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.checkout.lastNameInput);<br>            <span class="hljs-keyword">const</span> postalCode = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.checkout.postalCodeInput);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> errorMessage.getText(), <span class="hljs-string">`Expected error message to contain <span class="hljs-subst">${constants_1.REQUIRED_LAST_NAME_ERROR}</span>`</span>).to.contain(constants_1.REQUIRED_LAST_NAME_ERROR);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> firstName.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected first name input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> lastName.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected last name input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> postalCode.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected postal code input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);</code></pre>
+          </div>
+        </div>            <div id="3ab1139f-9cc9-4de9-a2e8-0cf2b897df09" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Unsuccessful continue to Checkout Overview when Zip/Postal Code field is left blank
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#3ab1139f-9cc9-4de9-a2e8-0cf2b897df09 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#3ab1139f-9cc9-4de9-a2e8-0cf2b897df09 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">3.385 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">await</span> allPages.products.goToShoppingCart();<br>            <span class="hljs-keyword">await</span> allPages.cart.scrollDown();<br>            <span class="hljs-keyword">await</span> allPages.cart.goToCheckout();<br>            <span class="hljs-keyword">const</span> expectedUrl = <span class="hljs-keyword">await</span> webDriver.getCurrentUrl();<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillFirstName(<span class="hljs-string">'Popescu'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillLastName(<span class="hljs-string">'Robertto'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillPostalCode(<span class="hljs-string">''</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.continueToCheckoutOverview();<br>            <span class="hljs-keyword">const</span> actualUrl = <span class="hljs-keyword">await</span> webDriver.getCurrentUrl();<br>            (<span class="hljs-number">0</span>, chai_1.expect)(expectedUrl, <span class="hljs-string">'Expected to remain on checkout page'</span>).to.be.equal(actualUrl);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> seleniumWrappers.isDisplayed(allPages.checkout.errorMessage), <span class="hljs-string">'Expected an error message to be displayed'</span>).to.be.true;<br>            <span class="hljs-keyword">const</span> errorMessage = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.checkout.errorMessage);<br>            <span class="hljs-keyword">const</span> firstName = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.checkout.firstNameInput);<br>            <span class="hljs-keyword">const</span> lastName = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.checkout.lastNameInput);<br>            <span class="hljs-keyword">const</span> postalCode = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.checkout.postalCodeInput);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> errorMessage.getText(), <span class="hljs-string">`Expected error message to contain <span class="hljs-subst">${constants_1.REQUIRED_POSTAL_CODE_ERROR}</span>`</span>).to.contain(constants_1.REQUIRED_POSTAL_CODE_ERROR);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> firstName.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected first name input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> lastName.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected last name input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> postalCode.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected postal code input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);</code></pre>
+          </div>
+        </div>            <div id="b5f52605-89b3-4282-a22e-241311357b97" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Item total, Tax and Total ammount to be paid are calculated correctly when landing to the &quot;Checkout Overview&quot; page
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#b5f52605-89b3-4282-a22e-241311357b97 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#b5f52605-89b3-4282-a22e-241311357b97 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">4.949 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">await</span> allPages.products.goToShoppingCart();<br>            <span class="hljs-keyword">await</span> allPages.cart.scrollDown();<br>            <span class="hljs-keyword">await</span> allPages.cart.goToCheckout();<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillFirstName(<span class="hljs-string">'Popescu'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillLastName(<span class="hljs-string">'Robertto'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.fillPostalCode(<span class="hljs-string">'123'</span>);<br>            <span class="hljs-keyword">await</span> allPages.checkout.continueToCheckoutOverview();<br>            <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            <span class="hljs-keyword">await</span> allPages.checkoutOverview.scrollDown();<br>            <span class="hljs-keyword">const</span> checkoutOverviewProductNames = <span class="hljs-keyword">await</span> allPages.checkoutOverview.getProductNames();<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> seleniumWrappers.isDisplayed(allPages.checkoutOverview.itemsSubtotal), <span class="hljs-string">'Expected the item total to be displayed'</span>).to.be.true;<br>            <span class="hljs-keyword">const</span> totalItemSumDisplayed = <span class="hljs-keyword">await</span> allPages.checkoutOverview.getItemsSubtotal();<br>            <span class="hljs-keyword">let</span> expectedTotalItemSum = <span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; checkoutOverviewProductNames.length; i++) {<br>                <span class="hljs-keyword">const</span> checkoutOverviewProductName = checkoutOverviewProductNames[i];<br>                expectedTotalItemSum += <span class="hljs-keyword">await</span> allPages.checkoutOverview.getProductPriceByName(checkoutOverviewProductName);<br>            }<br>            chai_1.assert.strictEqual(expectedTotalItemSum, totalItemSumDisplayed, <span class="hljs-string">`Expected the item total value to be <span class="hljs-subst">${expectedTotalItemSum}</span> $`</span>);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> seleniumWrappers.isDisplayed(allPages.checkoutOverview.taxValue), <span class="hljs-string">'Expected the tax value to be displayed'</span>).to.be.true;<br>            <span class="hljs-keyword">const</span> taxValueDisplayed = <span class="hljs-keyword">await</span> allPages.checkoutOverview.getTaxValue();<br>            <span class="hljs-keyword">const</span> taxRate = <span class="hljs-number">0.08</span>;<br>            <span class="hljs-keyword">const</span> expectedTaxValue = expectedTotalItemSum * taxRate;<br>            <span class="hljs-keyword">const</span> expectedTaxValueRounded = <span class="hljs-built_in">Math</span>.round(expectedTaxValue * <span class="hljs-number">100</span>) / <span class="hljs-number">100</span>;<br>            chai_1.assert.strictEqual(expectedTaxValueRounded, taxValueDisplayed, <span class="hljs-string">`Expected the tax value to be <span class="hljs-subst">${expectedTaxValueRounded}</span> $`</span>);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> seleniumWrappers.isDisplayed(allPages.checkoutOverview.totalValue), <span class="hljs-string">'Expected the total amount to be paid to be displayed'</span>).to.be.true;<br>            <span class="hljs-keyword">const</span> totalAmountDisplayed = <span class="hljs-keyword">await</span> allPages.checkoutOverview.getTotalValue();<br>            <span class="hljs-keyword">const</span> expectedTotalAmount = expectedTotalItemSum + expectedTaxValueRounded;<br>            chai_1.assert.strictEqual(expectedTotalAmount, totalAmountDisplayed, <span class="hljs-string">`Expected the total amount to be paid to be <span class="hljs-subst">${expectedTotalAmount}</span> $`</span>);</code></pre>
+          </div>
+        </div>        </div>
+              </div>
+            </div>
+        
+        
+          </div>
+        </section>
+        
+          </div>
+        </section>
+            <section class="suite-wrap">
+          <div id="bae39ddc-ffb3-4846-8bd4-67123463d8a0" class="suite has-tests has-passed">
+            <h3 class="suite-title">Footer tests</h3>
+            <h5 class="suite-filename">\src\tests\footer\footer.spec.ts</h5>
+            <!-- Suite Chart -->
+            <div class="suite-chart-wrap">
+              <canvas id="bae39ddc-ffb3-4846-8bd4-67123463d8a0" class="suite-chart" width="50" height="50" data-total-passes="3" data-total-failures="0" data-total-pending="0" data-total-skipped="0"></canvas>
+            </div>
+            <div class="suite-data-wrap">
+              <!-- Suite Summary -->
+              <ul class="suite-summary list-unstyled">
+                <li class="suite-summary-item duration">9.873 s</li>
+                <li class="suite-summary-item tests">3</li>
+                <li class="suite-summary-item passed">3</li>
+                <li class="suite-summary-item failed">0</li>
+                <li class="suite-summary-item pending">0</li>
+              </ul>
+              <!-- Test Info -->
+              <div class="suite-test-wrap">
+                <div class="suite-test-header" data-toggle="collapse" data-target="#bae39ddc-ffb3-4846-8bd4-67123463d8a0-test-list">
+                  <h4 class="suite-test-header-title">Tests</h4>
+                </div>
+                <div id="bae39ddc-ffb3-4846-8bd4-67123463d8a0-test-list" class="list-group test-list collapse in">
+                    <div id="b6ab7d09-8705-4ad5-898d-96184793ffec" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Clicking on the twitter icon redirects user to twitter website
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#b6ab7d09-8705-4ad5-898d-96184793ffec > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#b6ab7d09-8705-4ad5-898d-96184793ffec > .test-code.collapse">Code </button>
+              <span class="test-duration slow">3.495 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> userWasRedirected = <span class="hljs-keyword">await</span> websiteFunctions[websiteName]();<br>            <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            <span class="hljs-keyword">const</span> newUrl = <span class="hljs-keyword">await</span> webDriver.getCurrentUrl();<br>            (<span class="hljs-number">0</span>, chai_1.assert)(userWasRedirected, <span class="hljs-string">'Expected user to be redirected to another website'</span>);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(newUrl, <span class="hljs-string">`Expected user to be redirected to <span class="hljs-subst">${websiteName}</span> website`</span>).to.contain(websiteName);</code></pre>
+          </div>
+        </div>            <div id="a11d9dc8-1037-4903-8f0d-d3bfed56983c" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Clicking on the facebook icon redirects user to facebook website
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#a11d9dc8-1037-4903-8f0d-d3bfed56983c > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#a11d9dc8-1037-4903-8f0d-d3bfed56983c > .test-code.collapse">Code </button>
+              <span class="test-duration slow">3.191 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> userWasRedirected = <span class="hljs-keyword">await</span> websiteFunctions[websiteName]();<br>            <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            <span class="hljs-keyword">const</span> newUrl = <span class="hljs-keyword">await</span> webDriver.getCurrentUrl();<br>            (<span class="hljs-number">0</span>, chai_1.assert)(userWasRedirected, <span class="hljs-string">'Expected user to be redirected to another website'</span>);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(newUrl, <span class="hljs-string">`Expected user to be redirected to <span class="hljs-subst">${websiteName}</span> website`</span>).to.contain(websiteName);</code></pre>
+          </div>
+        </div>            <div id="e3b3dda5-d544-406a-93b4-2220db33ff2c" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Clicking on the linkedin icon redirects user to linkedin website
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#e3b3dda5-d544-406a-93b4-2220db33ff2c > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#e3b3dda5-d544-406a-93b4-2220db33ff2c > .test-code.collapse">Code </button>
+              <span class="test-duration slow">3.187 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> userWasRedirected = <span class="hljs-keyword">await</span> websiteFunctions[websiteName]();<br>            <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            <span class="hljs-keyword">const</span> newUrl = <span class="hljs-keyword">await</span> webDriver.getCurrentUrl();<br>            (<span class="hljs-number">0</span>, chai_1.assert)(userWasRedirected, <span class="hljs-string">'Expected user to be redirected to another website'</span>);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(newUrl, <span class="hljs-string">`Expected user to be redirected to <span class="hljs-subst">${websiteName}</span> website`</span>).to.contain(websiteName);</code></pre>
+          </div>
+        </div>        </div>
+              </div>
+            </div>
+        
+        
+          </div>
+        </section>
+            <section class="suite-wrap">
+          <div id="a763c6c2-99cd-4501-9357-af929b70870f" class="suite has-tests has-passed has-failed">
+            <h3 class="suite-title">Login page tests</h3>
+            <h5 class="suite-filename">\src\tests\login\login.spec.ts</h5>
+            <!-- Suite Chart -->
+            <div class="suite-chart-wrap">
+              <canvas id="a763c6c2-99cd-4501-9357-af929b70870f" class="suite-chart" width="50" height="50" data-total-passes="8" data-total-failures="1" data-total-pending="0" data-total-skipped="0"></canvas>
+            </div>
+            <div class="suite-data-wrap">
+              <!-- Suite Summary -->
+              <ul class="suite-summary list-unstyled">
+                <li class="suite-summary-item duration">28.923 s</li>
+                <li class="suite-summary-item tests">9</li>
+                <li class="suite-summary-item passed">8</li>
+                <li class="suite-summary-item failed">1</li>
+                <li class="suite-summary-item pending">0</li>
+              </ul>
+              <!-- Test Info -->
+              <div class="suite-test-wrap">
+                <div class="suite-test-header" data-toggle="collapse" data-target="#a763c6c2-99cd-4501-9357-af929b70870f-test-list">
+                  <h4 class="suite-test-header-title">Tests</h4>
+                </div>
+                <div id="a763c6c2-99cd-4501-9357-af929b70870f-test-list" class="list-group test-list collapse in">
+                    <div id="6dcf7dd9-0ab5-4fae-bb8f-e0716b8f8592" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Unsuccessful login when no credentials provided
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#6dcf7dd9-0ab5-4fae-bb8f-e0716b8f8592 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#6dcf7dd9-0ab5-4fae-bb8f-e0716b8f8592 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">2.145 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>        <span class="hljs-keyword">const</span> loginSuccessfully = <span class="hljs-keyword">await</span> allPages.login.clickLogin();<br>        (<span class="hljs-number">0</span>, chai_1.assert)(!loginSuccessfully, <span class="hljs-string">'Expected to remain on login page'</span>);<br>        (<span class="hljs-number">0</span>, chai_1.assert)(<span class="hljs-keyword">await</span> seleniumWrappers.isDisplayed(allPages.login.errorMessage), <span class="hljs-string">'Expected an error message to be displayed'</span>);<br>        <span class="hljs-keyword">const</span> errorMessage = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.errorMessage);<br>        <span class="hljs-keyword">const</span> username = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.fieldUsername);<br>        <span class="hljs-keyword">const</span> password = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.fieldPassword);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> errorMessage.getText(), <span class="hljs-string">`Expected error message to contain <span class="hljs-subst">${constants_1.REQUIRED_USERNAME_ERROR}</span>`</span>).to.contain(constants_1.REQUIRED_USERNAME_ERROR);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> username.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected username input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> password.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected password input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);</code></pre>
+          </div>
+        </div>            <div id="2ea113ef-277b-4d81-a119-ab67eeccc005" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Unsuccessful login when invalid credentials provided (both username and password)
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#2ea113ef-277b-4d81-a119-ab67eeccc005 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#2ea113ef-277b-4d81-a119-ab67eeccc005 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">3.256 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>        <span class="hljs-keyword">const</span> loginSuccessfully = <span class="hljs-keyword">await</span> allPages.login.login(constants_1.INVALID_USERNAME, constants_1.INVALID_PASSWORD);<br>        (<span class="hljs-number">0</span>, chai_1.assert)(!loginSuccessfully, <span class="hljs-string">'Expected to remain on login page'</span>);<br>        (<span class="hljs-number">0</span>, chai_1.assert)(<span class="hljs-keyword">await</span> seleniumWrappers.isDisplayed(allPages.login.errorMessage), <span class="hljs-string">'Expected an error message to be displayed'</span>);<br>        <span class="hljs-keyword">const</span> errorMessage = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.errorMessage);<br>        <span class="hljs-keyword">const</span> username = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.fieldUsername);<br>        <span class="hljs-keyword">const</span> password = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.fieldPassword);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> errorMessage.getText(), <span class="hljs-string">`Expected error message to contain <span class="hljs-subst">${constants_1.LOGIN_INVALID_ERROR}</span>`</span>).to.contain(constants_1.LOGIN_INVALID_ERROR);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> username.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected username input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> password.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected password input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);</code></pre>
+          </div>
+        </div>            <div id="c19bfba8-b40e-4e53-bb71-4212fa817c11" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Unsuccessful login when invalid credentials provided (username exist, password is wrong)
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#c19bfba8-b40e-4e53-bb71-4212fa817c11 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#c19bfba8-b40e-4e53-bb71-4212fa817c11 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">3.226 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>        <span class="hljs-keyword">const</span> loginSuccessfully = <span class="hljs-keyword">await</span> allPages.login.login(config_1.config.credentials.username, constants_1.INVALID_PASSWORD);<br>        (<span class="hljs-number">0</span>, chai_1.assert)(!loginSuccessfully, <span class="hljs-string">'Expected to remain on login page'</span>);<br>        (<span class="hljs-number">0</span>, chai_1.assert)(<span class="hljs-keyword">await</span> seleniumWrappers.isDisplayed(allPages.login.errorMessage), <span class="hljs-string">'Expected an error message to be displayed'</span>);<br>        <span class="hljs-keyword">const</span> errorMessage = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.errorMessage);<br>        <span class="hljs-keyword">const</span> username = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.fieldUsername);<br>        <span class="hljs-keyword">const</span> password = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.fieldPassword);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> errorMessage.getText(), <span class="hljs-string">`Expected error message to contain <span class="hljs-subst">${constants_1.LOGIN_INVALID_ERROR}</span>`</span>).to.contain(constants_1.LOGIN_INVALID_ERROR);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> username.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected username input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> password.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected password input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);</code></pre>
+          </div>
+        </div>            <div id="cc417e85-5f0d-4b02-b2e8-c3fa91be91dc" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Unsuccessful login when invalid credentials provided (username is wrong, password exists)
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#cc417e85-5f0d-4b02-b2e8-c3fa91be91dc > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#cc417e85-5f0d-4b02-b2e8-c3fa91be91dc > .test-code.collapse">Code </button>
+              <span class="test-duration slow">3.220 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>        <span class="hljs-keyword">const</span> loginSuccessfully = <span class="hljs-keyword">await</span> allPages.login.login(constants_1.INVALID_USERNAME, config_1.config.credentials.password);<br>        (<span class="hljs-number">0</span>, chai_1.assert)(!loginSuccessfully, <span class="hljs-string">'Expected to remain on login page'</span>);<br>        (<span class="hljs-number">0</span>, chai_1.assert)(<span class="hljs-keyword">await</span> seleniumWrappers.isDisplayed(allPages.login.errorMessage), <span class="hljs-string">'Expected an error message to be displayed'</span>);<br>        <span class="hljs-keyword">const</span> errorMessage = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.errorMessage);<br>        <span class="hljs-keyword">const</span> username = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.fieldUsername);<br>        <span class="hljs-keyword">const</span> password = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.fieldPassword);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> errorMessage.getText(), <span class="hljs-string">`Expected error message to contain <span class="hljs-subst">${constants_1.LOGIN_INVALID_ERROR}</span>`</span>).to.contain(constants_1.LOGIN_INVALID_ERROR);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> username.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected username input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> password.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected password input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);</code></pre>
+          </div>
+        </div>            <div id="c5f519e6-8655-430d-bbbe-7c7046b727e5" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Unsuccessful login when username field is left blank
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#c5f519e6-8655-430d-bbbe-7c7046b727e5 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#c5f519e6-8655-430d-bbbe-7c7046b727e5 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">3.209 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>        <span class="hljs-keyword">const</span> loginSuccessfully = <span class="hljs-keyword">await</span> allPages.login.login(constants_1.EMPTY_STRING, config_1.config.credentials.password);<br>        (<span class="hljs-number">0</span>, chai_1.assert)(!loginSuccessfully, <span class="hljs-string">'Expected to remain on login page'</span>);<br>        (<span class="hljs-number">0</span>, chai_1.assert)(<span class="hljs-keyword">await</span> seleniumWrappers.isDisplayed(allPages.login.errorMessage), <span class="hljs-string">'Expected an error message to be displayed'</span>);<br>        <span class="hljs-keyword">const</span> errorMessage = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.errorMessage);<br>        <span class="hljs-keyword">const</span> username = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.fieldUsername);<br>        <span class="hljs-keyword">const</span> password = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.fieldPassword);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> errorMessage.getText(), <span class="hljs-string">`Expected error message to contain <span class="hljs-subst">${constants_1.REQUIRED_USERNAME_ERROR}</span>`</span>).to.contain(constants_1.REQUIRED_USERNAME_ERROR);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> username.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected username input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> password.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected password input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);</code></pre>
+          </div>
+        </div>            <div id="e3dc4b59-e944-451c-8759-387a90adea86" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Unsuccessful login when password field is left blank
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#e3dc4b59-e944-451c-8759-387a90adea86 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#e3dc4b59-e944-451c-8759-387a90adea86 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">3.199 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>        <span class="hljs-keyword">const</span> loginSuccessfully = <span class="hljs-keyword">await</span> allPages.login.login(config_1.config.credentials.username, constants_1.EMPTY_STRING);<br>        (<span class="hljs-number">0</span>, chai_1.assert)(!loginSuccessfully, <span class="hljs-string">'Expected to remain on login page'</span>);<br>        (<span class="hljs-number">0</span>, chai_1.assert)(<span class="hljs-keyword">await</span> seleniumWrappers.isDisplayed(allPages.login.errorMessage), <span class="hljs-string">'Expected an error message to be displayed'</span>);<br>        <span class="hljs-keyword">const</span> errorMessage = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.errorMessage);<br>        <span class="hljs-keyword">const</span> username = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.fieldUsername);<br>        <span class="hljs-keyword">const</span> password = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.fieldPassword);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> errorMessage.getText(), <span class="hljs-string">`Expected error message to contain <span class="hljs-subst">${constants_1.REQUIRED_PASSWORD_ERROR}</span>`</span>).to.contain(constants_1.REQUIRED_PASSWORD_ERROR);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> username.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected username input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> password.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected password input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);</code></pre>
+          </div>
+        </div>            <div id="28966a75-9422-456e-b014-e651955c6fc3" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Unsuccessful login when user is locked out
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#28966a75-9422-456e-b014-e651955c6fc3 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#28966a75-9422-456e-b014-e651955c6fc3 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">3.204 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>        <span class="hljs-keyword">const</span> loginSuccessfully = <span class="hljs-keyword">await</span> allPages.login.login(constants_1.LOCKED_OUT_USERNAME, config_1.config.credentials.password);<br>        (<span class="hljs-number">0</span>, chai_1.assert)(!loginSuccessfully, <span class="hljs-string">'Expected to remain on login page'</span>);<br>        (<span class="hljs-number">0</span>, chai_1.assert)(<span class="hljs-keyword">await</span> seleniumWrappers.isDisplayed(allPages.login.errorMessage), <span class="hljs-string">'Expected an error message to be displayed'</span>);<br>        <span class="hljs-keyword">const</span> errorMessage = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.errorMessage);<br>        <span class="hljs-keyword">const</span> username = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.fieldUsername);<br>        <span class="hljs-keyword">const</span> password = <span class="hljs-keyword">await</span> webDriver.findElement(allPages.login.fieldPassword);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> errorMessage.getText(), <span class="hljs-string">`Expected error message to contain <span class="hljs-subst">${constants_1.USER_LOCKED_OUT_ERROR}</span>`</span>).to.contain(constants_1.USER_LOCKED_OUT_ERROR);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> username.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected username input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> password.getAttribute(<span class="hljs-string">'class'</span>), <span class="hljs-string">'Expected password input element to contain class `error`'</span>).to.contain(<span class="hljs-string">'error'</span>);</code></pre>
+          </div>
+        </div>            <div id="2b008319-e62c-45f4-a450-a526ff55a1b5" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Successful login when valid credentials provided
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#2b008319-e62c-45f4-a450-a526ff55a1b5 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#2b008319-e62c-45f4-a450-a526ff55a1b5 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">3.208 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>        <span class="hljs-keyword">const</span> loginSuccessfully = <span class="hljs-keyword">await</span> allPages.login.login(config_1.config.credentials.username, config_1.config.credentials.password);<br>        (<span class="hljs-number">0</span>, chai_1.assert)(loginSuccessfully, <span class="hljs-string">'Expected to be logged in successfully and to be redirected to the next page'</span>);</code></pre>
+          </div>
+        </div>            <div id="9420eedd-8827-4936-84b0-b40daa769b5f" class="list-group-item test failed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Login page should not displayed when user is logged in and tries to access login page
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#9420eedd-8827-4936-84b0-b40daa769b5f > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#9420eedd-8827-4936-84b0-b40daa769b5f > .test-code.collapse">Code </button>
+              <span class="test-duration ">4.256 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+            <p class="test-error-message">AssertionError: Expected login page to not be displayed when user is logged in: expected &#x27;https://www.saucedemo.com/&#x27; to not equal &#x27;https://www.saucedemo.com/&#x27;
+              <button class="btn btn-link btn-sm toggle-btn toggle-stack collapsed" data-toggle="collapse" data-target="#9420eedd-8827-4936-84b0-b40daa769b5f > .test-error-stack.collapse">Stack </button><button class="btn btn-link btn-sm toggle-btn toggle-stack collapsed" data-toggle="collapse" data-target="#9420eedd-8827-4936-84b0-b40daa769b5f > .test-error-scr.collapse">Screenshot </button>
+            </p>
+        <br>  <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>        <span class="hljs-keyword">await</span> webDriver.get(config_1.config.websiteUrl);<br>        <span class="hljs-keyword">const</span> loginSuccessfully = <span class="hljs-keyword">await</span> allPages.login.login(config_1.config.credentials.username, config_1.config.credentials.password);<br>        (<span class="hljs-number">0</span>, chai_1.assert)(loginSuccessfully, <span class="hljs-string">'Expected to be logged in successfully and to be redirected to the next page'</span>);<br>        <span class="hljs-keyword">await</span> webDriver.get(config_1.config.websiteUrl);<br>        <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> webDriver.getCurrentUrl(), <span class="hljs-string">'Expected login page to not be displayed when user is logged in'</span>).to.not.eq(config_1.config.websiteUrl);</code></pre>
+          </div>
+          <div class="test-error-stack collapse">
+            <pre><code class="hljs small">Difference between Expected(+) and Actual(-):
+        
+              Expected login page to not be displayed when user is logged in: expected 'https://www.saucedemo.com/' to not equal 'https://www.saucedemo.com/'
+              + expected - actual
+        
+              
+        
+        Expected:
+        https://www.saucedemo.com/
+        
+        Actual:
+        https://www.saucedemo.com/
+        
+        Stack:
+        AssertionError: Expected login page to not be displayed when user is logged <span class="hljs-keyword">in</span>: expected <span class="hljs-string">'https://www.saucedemo.com/'</span> to not equal <span class="hljs-string">'https://www.saucedemo.com/'</span><br>    at Context.&lt;anonymous&gt; (src\tests\login\login.spec.ts:<span class="hljs-number">224</span>:<span class="hljs-number">18</span>)<br>    at runMicrotasks (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">anonymous</span>&gt;</span>)</span><br>    at processTicksAndRejections (node:internal/process/task_queues:<span class="hljs-number">96</span>:<span class="hljs-number">5</span>)</code></pre>
+          </div>
+          <div class="test-error-scr collapse">
+            <pre><code class="hljs small"><p class="scr-msg">Login page should not displayed when user is logged in and tries to access login page</p><img src="./screenshots/Login page should not displayed when user is logged in and tries to access login page.png"></code></pre>
+          </div>
+        </div>        </div>
+              </div>
+            </div>
+        
+        
+          </div>
+        </section>
+            <section class="suite-wrap">
+          <div id="f7c50c6b-3b35-4c56-ad1a-7cd0155892f5" class="suite has-tests has-passed has-failed">
+            <h3 class="suite-title">Navigation Menu tests</h3>
+            <h5 class="suite-filename">\src\tests\navigationMenu\navigationMenu.spec.ts</h5>
+            <!-- Suite Chart -->
+            <div class="suite-chart-wrap">
+              <canvas id="f7c50c6b-3b35-4c56-ad1a-7cd0155892f5" class="suite-chart" width="50" height="50" data-total-passes="5" data-total-failures="1" data-total-pending="0" data-total-skipped="0"></canvas>
+            </div>
+            <div class="suite-data-wrap">
+              <!-- Suite Summary -->
+              <ul class="suite-summary list-unstyled">
+                <li class="suite-summary-item duration">18.530 s</li>
+                <li class="suite-summary-item tests">6</li>
+                <li class="suite-summary-item passed">5</li>
+                <li class="suite-summary-item failed">1</li>
+                <li class="suite-summary-item pending">0</li>
+              </ul>
+              <!-- Test Info -->
+              <div class="suite-test-wrap">
+                <div class="suite-test-header" data-toggle="collapse" data-target="#f7c50c6b-3b35-4c56-ad1a-7cd0155892f5-test-list">
+                  <h4 class="suite-test-header-title">Tests</h4>
+                </div>
+                <div id="f7c50c6b-3b35-4c56-ad1a-7cd0155892f5-test-list" class="list-group test-list collapse in">
+                    <div id="f9d478f8-152e-4ad5-ac23-c603a0fc0915" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Clicking on the menu button opens the navigation menu
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#f9d478f8-152e-4ad5-ac23-c603a0fc0915 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#f9d478f8-152e-4ad5-ac23-c603a0fc0915 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">1.92 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>        (<span class="hljs-number">0</span>, chai_1.assert)(!(<span class="hljs-keyword">await</span> allPages.navigationMenu.isMenuOpened()), <span class="hljs-string">'Expected menu to be closed'</span>);<br>        <span class="hljs-keyword">await</span> allPages.navigationMenu.openMenu();<br>        (<span class="hljs-number">0</span>, chai_1.assert)(<span class="hljs-keyword">await</span> allPages.navigationMenu.isMenuOpened(), <span class="hljs-string">'Expected menu to open after clicking on menu button from upper left corner'</span>);</code></pre>
+          </div>
+        </div>            <div id="3aef92c9-550a-4549-904d-ee2ca20ee3ef" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Clicking on the X menu button closes the navigation menu
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#3aef92c9-550a-4549-904d-ee2ca20ee3ef > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#3aef92c9-550a-4549-904d-ee2ca20ee3ef > .test-code.collapse">Code </button>
+              <span class="test-duration slow">2.147 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>        <span class="hljs-keyword">await</span> allPages.navigationMenu.openMenu();<br>        (<span class="hljs-number">0</span>, chai_1.assert)(<span class="hljs-keyword">await</span> allPages.navigationMenu.isMenuOpened(), <span class="hljs-string">'Expected menu to be opened'</span>);<br>        <span class="hljs-keyword">await</span> allPages.navigationMenu.closeMenu();<br>        (<span class="hljs-number">0</span>, chai_1.assert)(!(<span class="hljs-keyword">await</span> allPages.navigationMenu.isMenuOpened()), <span class="hljs-string">'Expected menu to close after clicking on X button'</span>);</code></pre>
+          </div>
+        </div>            <div id="ab4d847b-c6f6-48ba-b36a-5c86c16bbd98" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Clicking on the &quot;All Items&quot; option from the menu opens Products page
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#ab4d847b-c6f6-48ba-b36a-5c86c16bbd98 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#ab4d847b-c6f6-48ba-b36a-5c86c16bbd98 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">3.247 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>        <span class="hljs-keyword">await</span> webDriver.get(config_1.config.websiteUrl + constants_1.CART_PAGE_ROUTE);<br>        <span class="hljs-keyword">const</span> clickedSuccessfully = <span class="hljs-keyword">await</span> allPages.navigationMenu.clickOnAllItemsOption();<br>        (<span class="hljs-number">0</span>, chai_1.assert)(clickedSuccessfully, <span class="hljs-string">'Expected user to be redirected to another page'</span>);<br>        <span class="hljs-keyword">const</span> currentUrl = <span class="hljs-keyword">await</span> webDriver.getCurrentUrl();<br>        (<span class="hljs-number">0</span>, chai_1.expect)(currentUrl, <span class="hljs-string">'Expected the redirected page to be Products page'</span>).to.contain(constants_1.PRODUCTS_PAGE_ROUTE);</code></pre>
+          </div>
+        </div>            <div id="daa51c9f-2787-492d-8b29-f0c6b57350d3" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Clicking on the &quot;About&quot; option from the menu opens About page
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#daa51c9f-2787-492d-8b29-f0c6b57350d3 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#daa51c9f-2787-492d-8b29-f0c6b57350d3 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">4.838 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>        <span class="hljs-keyword">const</span> clickedSuccessfully = <span class="hljs-keyword">await</span> allPages.navigationMenu.clickOnAboutOption();<br>        (<span class="hljs-number">0</span>, chai_1.assert)(clickedSuccessfully, <span class="hljs-string">'Expected user to be redirected to another page'</span>);<br>        <span class="hljs-keyword">const</span> currentUrl = <span class="hljs-keyword">await</span> webDriver.getCurrentUrl();<br>        (<span class="hljs-number">0</span>, chai_1.expect)(currentUrl, <span class="hljs-string">'Expected the redirected page to be About page'</span>).to.eq(constants_1.ABOUT_PAGE_URL);</code></pre>
+          </div>
+        </div>            <div id="5c10e88b-ad4c-441a-8f95-aa465f132080" class="list-group-item test failed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Clicking on the &quot;Reset App State&quot; option from the menu deletes all products from cart
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#5c10e88b-ad4c-441a-8f95-aa465f132080 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#5c10e88b-ad4c-441a-8f95-aa465f132080 > .test-code.collapse">Code </button>
+              <span class="test-duration ">4.94 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+            <p class="test-error-message">AssertionError: Expected &quot;Remove&quot; button to be replaced with &quot;Add to cart&quot; button for product &quot;Sauce Labs Backpack&quot;
+              <button class="btn btn-link btn-sm toggle-btn toggle-stack collapsed" data-toggle="collapse" data-target="#5c10e88b-ad4c-441a-8f95-aa465f132080 > .test-error-stack.collapse">Stack </button><button class="btn btn-link btn-sm toggle-btn toggle-stack collapsed" data-toggle="collapse" data-target="#5c10e88b-ad4c-441a-8f95-aa465f132080 > .test-error-scr.collapse">Screenshot </button>
+            </p>
+        <br>  <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>        <span class="hljs-keyword">const</span> productNames = <span class="hljs-keyword">await</span> allPages.products.getProductNames();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> productName <span class="hljs-keyword">of</span> productNames) {<br>            <span class="hljs-keyword">await</span> allPages.products.addToCart(productName);<br>            (<span class="hljs-number">0</span>, chai_1.assert)(!(<span class="hljs-keyword">await</span> allPages.products.verifyAddToCartButtonExists(productName)), <span class="hljs-string">`Expected "Add to cart" button to be replaced with "Remove" button for product "<span class="hljs-subst">${productName}</span>"`</span>);<br>        }<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> allPages.products.getShoppingCartBadgeValue(), <span class="hljs-string">`Expected shopping cart to contain <span class="hljs-subst">${productNames.length}</span> products`</span>).to.eq(productNames.length);<br>        <span class="hljs-keyword">await</span> allPages.navigationMenu.clickOnResetAppState();<br>        <span class="hljs-keyword">await</span> allPages.navigationMenu.closeMenu();<br>        (<span class="hljs-number">0</span>, chai_1.expect)(<span class="hljs-keyword">await</span> allPages.products.getShoppingCartBadgeValue(), <span class="hljs-string">'Expected shopping cart to not contain any products'</span>).to.eq(<span class="hljs-number">0</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> productName <span class="hljs-keyword">of</span> productNames) {<br>            (<span class="hljs-number">0</span>, chai_1.assert)(<span class="hljs-keyword">await</span> allPages.products.verifyAddToCartButtonExists(productName), <span class="hljs-string">`Expected "Remove" button to be replaced with "Add to cart" button for product "<span class="hljs-subst">${productName}</span>"`</span>);<br>        }</code></pre>
+          </div>
+          <div class="test-error-stack collapse">
+            <pre><code class="hljs small">Difference between Expected(+) and Actual(-):
+        Expected "Remove" button to be replaced with "Add to cart" button for product "Sauce Labs Backpack"
+        
+        Expected:
+        undefined
+        
+        Actual:
+        null
+        
+        Stack:
+        AssertionError: Expected <span class="hljs-string">"Remove"</span> button to be replaced <span class="hljs-keyword">with</span> <span class="hljs-string">"Add to cart"</span> button <span class="hljs-keyword">for</span> product <span class="hljs-string">"Sauce Labs Backpack"</span><br>    at Context.&lt;anonymous&gt; (src\tests\navigationMenu\navigationMenu.spec.ts:<span class="hljs-number">92</span>:<span class="hljs-number">19</span>)<br>    at runMicrotasks (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">anonymous</span>&gt;</span>)</span><br>    at processTicksAndRejections (node:internal/process/task_queues:<span class="hljs-number">96</span>:<span class="hljs-number">5</span>)</code></pre>
+          </div>
+          <div class="test-error-scr collapse">
+            <pre><code class="hljs small"><p class="scr-msg">Clicking on the "Reset App State" option from the menu deletes all products from cart</p><img src="./screenshots/Clicking on the 'Reset App State' option from the menu deletes all products from cart.png"></code></pre>
+          </div>
+        </div>            <div id="1db6cebc-03aa-4818-90f7-067346f3f827" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Clicking on the &quot;Logout&quot; option from the menu logs user out and opens Login page
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#1db6cebc-03aa-4818-90f7-067346f3f827 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#1db6cebc-03aa-4818-90f7-067346f3f827 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">3.112 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>        <span class="hljs-keyword">const</span> clickedSuccessfully = <span class="hljs-keyword">await</span> allPages.navigationMenu.clickOnLogoutOption();<br>        (<span class="hljs-number">0</span>, chai_1.assert)(clickedSuccessfully, <span class="hljs-string">'Expected user to be redirected to another page'</span>);<br>        <span class="hljs-keyword">const</span> currentUrl = <span class="hljs-keyword">await</span> webDriver.getCurrentUrl();<br>        (<span class="hljs-number">0</span>, chai_1.expect)(currentUrl, <span class="hljs-string">'Expected the redirected page to be Login page'</span>).to.eq(config_1.config.websiteUrl);</code></pre>
+          </div>
+        </div>        </div>
+              </div>
+            </div>
+        
+        
+          </div>
+        </section>
+            <section class="suite-wrap">
+          <div id="585974b8-5f1d-46a0-894d-166b19934d35" class="suite has-suites">
+            <h3 class="suite-title">Products page tests</h3>
+            <h5 class="suite-filename">\src\tests\products\products.spec.ts</h5>
+        
+              <section class="suite-wrap">
+          <div id="77620914-797d-405c-a673-02e68c71efd3" class="suite has-tests has-passed">
+            <h3 class="suite-title">User is logged out</h3>
+            <h5 class="suite-filename">\src\tests\products\products.spec.ts</h5>
+            <!-- Suite Chart -->
+            <div class="suite-chart-wrap">
+              <canvas id="77620914-797d-405c-a673-02e68c71efd3" class="suite-chart" width="50" height="50" data-total-passes="1" data-total-failures="0" data-total-pending="0" data-total-skipped="0"></canvas>
+            </div>
+            <div class="suite-data-wrap">
+              <!-- Suite Summary -->
+              <ul class="suite-summary list-unstyled">
+                <li class="suite-summary-item duration">10.246 s</li>
+                <li class="suite-summary-item tests">1</li>
+                <li class="suite-summary-item passed">1</li>
+                <li class="suite-summary-item failed">0</li>
+                <li class="suite-summary-item pending">0</li>
+              </ul>
+              <!-- Test Info -->
+              <div class="suite-test-wrap">
+                <div class="suite-test-header" data-toggle="collapse" data-target="#77620914-797d-405c-a673-02e68c71efd3-test-list">
+                  <h4 class="suite-test-header-title">Tests</h4>
+                </div>
+                <div id="77620914-797d-405c-a673-02e68c71efd3-test-list" class="list-group test-list collapse in">
+                    <div id="7ba0c590-d25f-46d5-a87f-18f232160160" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Cannot access products page when user is not logged in
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#7ba0c590-d25f-46d5-a87f-18f232160160 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#7ba0c590-d25f-46d5-a87f-18f232160160 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">10.246 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">await</span> webDriver.get(config_1.config.websiteUrl + constants_1.PRODUCTS_PAGE_ROUTE);<br>            <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad(<span class="hljs-number">10000</span>);<br>            <span class="hljs-keyword">const</span> currentUrl = <span class="hljs-keyword">await</span> webDriver.getCurrentUrl();<br>            (<span class="hljs-number">0</span>, chai_1.expect)(currentUrl, <span class="hljs-string">'Expected redirected URL to not contain Products page route'</span>).to.not.include(constants_1.PRODUCTS_PAGE_ROUTE);<br>            (<span class="hljs-number">0</span>, chai_1.expect)(currentUrl, <span class="hljs-string">'Expected redirected URL to be the Login page'</span>).to.be.equal(config_1.config.websiteUrl);</code></pre>
+          </div>
+        </div>        </div>
+              </div>
+            </div>
+        
+        
+          </div>
+        </section>
+              <section class="suite-wrap">
+          <div id="b22199a9-6c31-49e9-bd98-267ba36f7cf6" class="suite has-tests has-passed">
+            <h3 class="suite-title">User is logged in</h3>
+            <h5 class="suite-filename">\src\tests\products\products.spec.ts</h5>
+            <!-- Suite Chart -->
+            <div class="suite-chart-wrap">
+              <canvas id="b22199a9-6c31-49e9-bd98-267ba36f7cf6" class="suite-chart" width="50" height="50" data-total-passes="13" data-total-failures="0" data-total-pending="0" data-total-skipped="0"></canvas>
+            </div>
+            <div class="suite-data-wrap">
+              <!-- Suite Summary -->
+              <ul class="suite-summary list-unstyled">
+                <li class="suite-summary-item duration">1:20.645 m</li>
+                <li class="suite-summary-item tests">13</li>
+                <li class="suite-summary-item passed">13</li>
+                <li class="suite-summary-item failed">0</li>
+                <li class="suite-summary-item pending">0</li>
+              </ul>
+              <!-- Test Info -->
+              <div class="suite-test-wrap">
+                <div class="suite-test-header" data-toggle="collapse" data-target="#b22199a9-6c31-49e9-bd98-267ba36f7cf6-test-list">
+                  <h4 class="suite-test-header-title">Tests</h4>
+                </div>
+                <div id="b22199a9-6c31-49e9-bd98-267ba36f7cf6-test-list" class="list-group test-list collapse in">
+                    <div id="4b04571e-3ef5-421f-b0b6-7c249bf9de6c" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Products are successfully displayed when products page is accessed
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#4b04571e-3ef5-421f-b0b6-7c249bf9de6c > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#4b04571e-3ef5-421f-b0b6-7c249bf9de6c > .test-code.collapse">Code </button>
+              <span class="test-duration slow">86 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">await</span> allPages.products.scrollDown();<br>            (<span class="hljs-number">0</span>, chai_1.assert)(<span class="hljs-keyword">await</span> allPages.products.verifyProductsDisplayedAndVisible(), <span class="hljs-string">'Expected to display all products'</span>);</code></pre>
+          </div>
+        </div>            <div id="e6debdc1-db0f-454a-a249-d8ff50b70bb3" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              All products have prices greater than 0
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#e6debdc1-db0f-454a-a249-d8ff50b70bb3 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#e6debdc1-db0f-454a-a249-d8ff50b70bb3 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">468 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> productNames = <span class="hljs-keyword">await</span> allPages.products.getProductNames();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> productName <span class="hljs-keyword">of</span> productNames) {<br>                <span class="hljs-keyword">const</span> productPrice = <span class="hljs-keyword">await</span> allPages.products.getProductPriceByName(productName);<br>                (<span class="hljs-number">0</span>, chai_1.expect)(productPrice, <span class="hljs-string">`Expected price for product "<span class="hljs-subst">${productName}</span>" (<span class="hljs-subst">${productPrice}</span>$) to be greater than 0"`</span>).to.be.greaterThan(<span class="hljs-number">0</span>);<br>            }</code></pre>
+          </div>
+        </div>            <div id="44313153-3fc8-4bdf-b4e7-d223fc12d32f" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              All products are successfully sorted alphabetically in ascending order when &quot;Name (A to Z)&quot; is selected
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#44313153-3fc8-4bdf-b4e7-d223fc12d32f > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#44313153-3fc8-4bdf-b4e7-d223fc12d32f > .test-code.collapse">Code </button>
+              <span class="test-duration slow">1.384 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> productNames = <span class="hljs-keyword">await</span> allPages.products.getProductNames();<br>            <span class="hljs-keyword">const</span> sortedProductNames = [...productNames].sort();<br>            <span class="hljs-keyword">await</span> allPages.products.sortProductsByNameAsc();<br>            <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            <span class="hljs-keyword">const</span> sortedProductNamesDisplayed = <span class="hljs-keyword">await</span> allPages.products.getProductNames();<br>            chai_1.assert.deepEqual(sortedProductNamesDisplayed, sortedProductNames, <span class="hljs-string">'Expected the products to be sorted alphabetically in ascending order'</span>);<br>            (<span class="hljs-number">0</span>, chai_1.assert)(<span class="hljs-keyword">await</span> allPages.products.verifyProductsDisplayedAndVisible(), <span class="hljs-string">'Expected to display all products'</span>);<br>            <span class="hljs-keyword">await</span> allPages.products.scrollDown();<br>            (<span class="hljs-number">0</span>, chai_1.assert)(<span class="hljs-keyword">await</span> allPages.products.verifyProductsDisplayedAndVisible(), <span class="hljs-string">'Expected to display all products after scrolling'</span>);</code></pre>
+          </div>
+        </div>            <div id="17285ff1-b08d-4f63-82f8-79863ac19ff3" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              All products are successfully sorted alphabetically in descending order when &quot;Name (Z to A)&quot; is selected
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#17285ff1-b08d-4f63-82f8-79863ac19ff3 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#17285ff1-b08d-4f63-82f8-79863ac19ff3 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">1.405 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> productNames = <span class="hljs-keyword">await</span> allPages.products.getProductNames();<br>            <span class="hljs-keyword">const</span> sortedProductNames = [...productNames].sortb.localeCompare(a));<br>            <span class="hljs-keyword">await</span> allPages.products.sortProductsByNameDesc();<br>            <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            <span class="hljs-keyword">const</span> sortedProductNamesDisplayed = <span class="hljs-keyword">await</span> allPages.products.getProductNames();<br>            chai_1.assert.deepEqual(sortedProductNamesDisplayed, sortedProductNames, <span class="hljs-string">'Expected the products to be sorted alphabetically in descending order'</span>);<br>            (<span class="hljs-number">0</span>, chai_1.assert)(<span class="hljs-keyword">await</span> allPages.products.verifyProductsDisplayedAndVisible(), <span class="hljs-string">'Expected to display all products'</span>);<br>            <span class="hljs-keyword">await</span> allPages.products.scrollDown();<br>            (<span class="hljs-number">0</span>, chai_1.assert)(<span class="hljs-keyword">await</span> allPages.products.verifyProductsDisplayedAndVisible(), <span class="hljs-string">'Expected to display all products after scrolling'</span>);</code></pre>
+          </div>
+        </div>            <div id="6eefac45-c7fd-4f86-b11d-37892338b93e" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              All products are successfully sorted ascending by price when &quot;Price (low to high)&quot; is selected
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#6eefac45-c7fd-4f86-b11d-37892338b93e > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#6eefac45-c7fd-4f86-b11d-37892338b93e > .test-code.collapse">Code </button>
+              <span class="test-duration slow">1.404 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> productPrices = <span class="hljs-keyword">await</span> allPages.products.getProductPrices();<br>            <span class="hljs-keyword">const</span> sortedProductPrices = [...productPrices].sorta - b);<br>            <span class="hljs-keyword">await</span> allPages.products.sortProductsByPriceAsc();<br>            <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            <span class="hljs-keyword">const</span> sortedProductPricesDisplayed = <span class="hljs-keyword">await</span> allPages.products.getProductPrices();<br>            chai_1.assert.deepEqual(sortedProductPricesDisplayed, sortedProductPrices, <span class="hljs-string">'Expected the products to be sorted by price in ascending order'</span>);<br>            (<span class="hljs-number">0</span>, chai_1.assert)(<span class="hljs-keyword">await</span> allPages.products.verifyProductsDisplayedAndVisible(), <span class="hljs-string">'Expected to display all products'</span>);<br>            <span class="hljs-keyword">await</span> allPages.products.scrollDown();<br>            (<span class="hljs-number">0</span>, chai_1.assert)(<span class="hljs-keyword">await</span> allPages.products.verifyProductsDisplayedAndVisible(), <span class="hljs-string">'Expected to display all products after scrolling'</span>);</code></pre>
+          </div>
+        </div>            <div id="d7657158-9e1c-4171-9a00-ceaaaddac362" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              All products are successfuly sorted descending by price when &quot;Price (high to low)&quot; is selected
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#d7657158-9e1c-4171-9a00-ceaaaddac362 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#d7657158-9e1c-4171-9a00-ceaaaddac362 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">1.406 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> productPrices = <span class="hljs-keyword">await</span> allPages.products.getProductPrices();<br>            <span class="hljs-keyword">const</span> sortedProductPrices = [...productPrices].sortb - a);<br>            <span class="hljs-keyword">await</span> allPages.products.sortProductsByPriceDesc();<br>            <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            <span class="hljs-keyword">const</span> sortedProductPricesDisplayed = <span class="hljs-keyword">await</span> allPages.products.getProductPrices();<br>            chai_1.assert.deepEqual(sortedProductPricesDisplayed, sortedProductPrices, <span class="hljs-string">'Expected the products to be sorted by price in descending order'</span>);<br>            (<span class="hljs-number">0</span>, chai_1.assert)(<span class="hljs-keyword">await</span> allPages.products.verifyProductsDisplayedAndVisible(), <span class="hljs-string">'Expected to display all products'</span>);<br>            <span class="hljs-keyword">await</span> allPages.products.scrollDown();<br>            (<span class="hljs-number">0</span>, chai_1.assert)(<span class="hljs-keyword">await</span> allPages.products.verifyProductsDisplayedAndVisible(), <span class="hljs-string">'Expected to display all products after scrolling'</span>);</code></pre>
+          </div>
+        </div>            <div id="a1895307-b162-4130-a04b-3aaec4335d70" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              All products have their corresponding name, description, image, price and button when comparing the name, description, image, price and button from Products page with the one from details page
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#a1895307-b162-4130-a04b-3aaec4335d70 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#a1895307-b162-4130-a04b-3aaec4335d70 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">27.275 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> productNames = <span class="hljs-keyword">await</span> allPages.products.getProductNames();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; productNames.length; i++) {<br>                <span class="hljs-keyword">const</span> productName = productNames[i];<br>                <span class="hljs-keyword">const</span> productNameExpected = productName;<br>                <span class="hljs-keyword">const</span> productDescriptionExpected = <span class="hljs-keyword">await</span> allPages.products.getProductDescriptionByName(productName);<br>                <span class="hljs-keyword">const</span> productImageExpected = <span class="hljs-keyword">await</span> allPages.products.getProductImageByName(productName);<br>                <span class="hljs-keyword">const</span> productPriceExpected = (<span class="hljs-keyword">await</span> allPages.products.getProductPriceByName(productName)).toString();<br>                <span class="hljs-keyword">const</span> productButtonExpected = <span class="hljs-keyword">await</span> allPages.products.verifyAddToCartButtonExists(productName);<br>                <span class="hljs-keyword">await</span> allPages.products.clickProductByName(productName);<br>                <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>                <span class="hljs-keyword">const</span> productNameDisplayed = <span class="hljs-keyword">await</span> allPages.productDetails.getProductTitle();<br>                chai_1.assert.strictEqual(productNameDisplayed, productNameExpected, <span class="hljs-string">`Expected the name for <span class="hljs-subst">${productName}</span> to match the name provided in the list of products`</span>);<br>                <span class="hljs-keyword">const</span> productDescriptionDisplayed = <span class="hljs-keyword">await</span> allPages.productDetails.getProductDescription();<br>                chai_1.assert.strictEqual(productDescriptionDisplayed, productDescriptionExpected, <span class="hljs-string">`Expected the description for <span class="hljs-subst">${productName}</span> to match the description provided in the list of products`</span>);<br>                <span class="hljs-keyword">const</span> productImageDisplayed = <span class="hljs-keyword">await</span> allPages.productDetails.getProductImage();<br>                chai_1.assert.strictEqual(productImageDisplayed, productImageExpected, <span class="hljs-string">`Expected the image for <span class="hljs-subst">${productName}</span> to match the image provided in the list of products`</span>);<br>                <span class="hljs-keyword">const</span> productPriceDisplayed = (<span class="hljs-keyword">await</span> allPages.productDetails.getProductPrice()).toString();<br>                chai_1.assert.strictEqual(productPriceDisplayed, productPriceExpected, <span class="hljs-string">`Expected the price for <span class="hljs-subst">${productName}</span> to match the price provided in the list of products`</span>);<br>                <span class="hljs-keyword">const</span> productButtonDisplayed = <span class="hljs-keyword">await</span> allPages.productDetails.getProductButton();<br>                chai_1.assert.strictEqual(productButtonDisplayed, productButtonExpected, <span class="hljs-string">`Expected the price for <span class="hljs-subst">${productName}</span> to match the price provided in the list of products`</span>);<br>                <span class="hljs-keyword">await</span> allPages.productDetails.navigateBackToProductsPage();<br>                <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            }<br>            (<span class="hljs-number">0</span>, chai_1.assert)(<span class="hljs-keyword">await</span> allPages.products.verifyProductsDisplayedAndVisible(), <span class="hljs-string">'Expected to display all products'</span>);</code></pre>
+          </div>
+        </div>            <div id="a0b6b24b-8548-41a2-95f0-30418c5d8f27" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              A product can be added to the Cart when &quot;Add to Cart&quot; button is clicked
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#a0b6b24b-8548-41a2-95f0-30418c5d8f27 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#a0b6b24b-8548-41a2-95f0-30418c5d8f27 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">1.572 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> productNames = <span class="hljs-keyword">await</span> allPages.products.getProductNames();<br>            <span class="hljs-keyword">const</span> firstProductName = productNames[<span class="hljs-number">0</span>];<br>            <span class="hljs-keyword">const</span> initialShoppingCartValue = <span class="hljs-keyword">await</span> allPages.products.getShoppingCartBadgeValue();<br>            <span class="hljs-keyword">const</span> initialProductButton = <span class="hljs-keyword">await</span> allPages.products.verifyAddToCartButtonExists(firstProductName);<br>            <span class="hljs-keyword">const</span> expectedProductButton = !initialProductButton;<br>            <span class="hljs-keyword">await</span> allPages.products.addToCart(firstProductName);<br>            <span class="hljs-keyword">const</span> updatedShoppingCartValue = <span class="hljs-keyword">await</span> allPages.products.getShoppingCartBadgeValue();<br>            <span class="hljs-keyword">const</span> updatedProductButton = <span class="hljs-keyword">await</span> allPages.products.verifyAddToCartButtonExists(firstProductName);<br>            <span class="hljs-keyword">const</span> shoppingCartValueDifference = updatedShoppingCartValue - initialShoppingCartValue;<br>            chai_1.assert.strictEqual(<span class="hljs-number">1</span>, shoppingCartValueDifference, <span class="hljs-string">`Expected the updated shopping cart value - initial shopping cart value equals to 1`</span>);<br>            chai_1.assert.strictEqual(expectedProductButton, updatedProductButton, <span class="hljs-string">`Expected the updated product button to be different than the initial button`</span>);<br>            <span class="hljs-keyword">const</span> productDescription = <span class="hljs-keyword">await</span> allPages.products.getProductDescriptionByName(firstProductName);<br>            <span class="hljs-keyword">const</span> productPrice = <span class="hljs-keyword">await</span> allPages.products.getProductPriceByName(firstProductName);<br>            <span class="hljs-keyword">await</span> allPages.products.goToShoppingCart();<br>            <span class="hljs-keyword">const</span> productQuantityInCart = <span class="hljs-keyword">await</span> allPages.cart.getProductQuantity(firstProductName);<br>            chai_1.assert.strictEqual(<span class="hljs-number">1</span>, productQuantityInCart, <span class="hljs-string">`Expected the quantity of that product to be 1 in the cart`</span>);<br>            <span class="hljs-keyword">const</span> cartProductNames = <span class="hljs-keyword">await</span> allPages.cart.getProductNames();<br>            <span class="hljs-keyword">const</span> cartFirstProductName = cartProductNames[<span class="hljs-number">0</span>];<br>            <span class="hljs-keyword">const</span> cartProductDescription = <span class="hljs-keyword">await</span> allPages.cart.getProductDescriptionByName(cartFirstProductName);<br>            <span class="hljs-keyword">const</span> cartProductPrice = <span class="hljs-keyword">await</span> allPages.cart.getProductPriceByName(cartFirstProductName);<br>            <span class="hljs-keyword">const</span> cartProductButton = <span class="hljs-keyword">await</span> allPages.cart.verifyAddToCartButtonExists(cartFirstProductName);<br>            chai_1.assert.strictEqual(firstProductName, cartFirstProductName, <span class="hljs-string">`Expected the cart product name to be the same as on the product list`</span>);<br>            chai_1.assert.strictEqual(productDescription, cartProductDescription, <span class="hljs-string">`Expected the cart product description to be the same as on the product list`</span>);<br>            chai_1.assert.strictEqual(productPrice, cartProductPrice, <span class="hljs-string">`Expected the cart product price to be the same as on the product list`</span>);<br>            chai_1.assert.strictEqual(expectedProductButton, cartProductButton, <span class="hljs-string">`Expected the cart button to be the same as on the product list`</span>);</code></pre>
+          </div>
+        </div>            <div id="6ee93a28-8d42-422d-9cd0-6517b9c9c817" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              A product can be removed from the Cart when &quot;Remove item&quot; button is clicked
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#6ee93a28-8d42-422d-9cd0-6517b9c9c817 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#6ee93a28-8d42-422d-9cd0-6517b9c9c817 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">1.306 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> productNames = <span class="hljs-keyword">await</span> allPages.products.getProductNames();<br>            <span class="hljs-keyword">let</span> findRemoveButtonProductName = <span class="hljs-string">''</span>;<br>            <span class="hljs-keyword">let</span> findRemoveButton = <span class="hljs-literal">true</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; productNames.length; i++) {<br>                <span class="hljs-keyword">const</span> currentProductName = productNames[i];<br>                <span class="hljs-keyword">const</span> haveAddToCartButton = <span class="hljs-keyword">await</span> allPages.products.verifyAddToCartButtonExists(currentProductName);<br>                <span class="hljs-keyword">if</span> (!haveAddToCartButton) {<br>                    findRemoveButtonProductName = currentProductName;<br>                    findRemoveButton = haveAddToCartButton;<br>                    <span class="hljs-keyword">break</span>;<br>                }<br>            }<br>            <span class="hljs-keyword">const</span> productNameWithRemoveButton = findRemoveButtonProductName;<br>            <span class="hljs-keyword">const</span> productRemoveButton = findRemoveButton;<br>            <span class="hljs-keyword">const</span> initialShoppingCartValue = <span class="hljs-keyword">await</span> allPages.products.getShoppingCartBadgeValue();<br>            <span class="hljs-keyword">const</span> expectedShoppingCartValue = initialShoppingCartValue - <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">const</span> expectedButton = !productRemoveButton;<br>            <span class="hljs-keyword">await</span> allPages.products.removeFromCart(productNameWithRemoveButton);<br>            <span class="hljs-keyword">const</span> actualShoppingCartValue = <span class="hljs-keyword">await</span> allPages.products.getShoppingCartBadgeValue();<br>            <span class="hljs-keyword">const</span> actualButton = <span class="hljs-keyword">await</span> allPages.products.verifyAddToCartButtonExists(productNameWithRemoveButton);<br>            chai_1.assert.strictEqual(actualShoppingCartValue, expectedShoppingCartValue, <span class="hljs-string">`Expected the cart value from products to be equal to initial shopping cart value - 1`</span>);<br>            chai_1.assert.strictEqual(actualButton, expectedButton, <span class="hljs-string">`Expected the product button to be add to cart instead of remove`</span>);<br>            <span class="hljs-keyword">await</span> allPages.products.goToShoppingCart();<br>            <span class="hljs-keyword">const</span> productQuantityInCart = <span class="hljs-keyword">await</span> allPages.cart.getProductQuantity(productNameWithRemoveButton);<br>            chai_1.assert.strictEqual(<span class="hljs-number">0</span>, productQuantityInCart, <span class="hljs-string">`Expected the quantity of that product to be 0 in the cart`</span>);</code></pre>
+          </div>
+        </div>            <div id="d194fab8-111c-4458-9196-aecdb487b732" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              All products can be added to the Cart when &quot;Add to Cart&quot; button is clicked for each one
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#d194fab8-111c-4458-9196-aecdb487b732 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#d194fab8-111c-4458-9196-aecdb487b732 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">1.709 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> productNames = <span class="hljs-keyword">await</span> allPages.products.getProductNames();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; productNames.length; i++) {<br>                <span class="hljs-keyword">await</span> allPages.products.addToCart(productNames[i]);<br>            }<br>            <span class="hljs-keyword">await</span> allPages.products.goToShoppingCart();<br>            <span class="hljs-keyword">const</span> cartProductNames = <span class="hljs-keyword">await</span> allPages.cart.getProductNames();<br>            (<span class="hljs-number">0</span>, chai_1.expect)(productNames).to.deep.equal(cartProductNames, <span class="hljs-string">'Expected all the products to be added to the cart'</span>);</code></pre>
+          </div>
+        </div>            <div id="7d063111-f6a6-4c74-a2d6-cb6e033343ed" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              All products can be removed from the Cart when &quot;Remove&quot; button is clicked for each one
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#7d063111-f6a6-4c74-a2d6-cb6e033343ed > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#7d063111-f6a6-4c74-a2d6-cb6e033343ed > .test-code.collapse">Code </button>
+              <span class="test-duration slow">1.613 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> productNames = <span class="hljs-keyword">await</span> allPages.products.getProductNames();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; productNames.length; i++) {<br>                <span class="hljs-keyword">await</span> allPages.products.removeFromCart(productNames[i]);<br>            }<br>            <span class="hljs-keyword">await</span> allPages.products.goToShoppingCart();<br>            <span class="hljs-keyword">const</span> cartProductNames = <span class="hljs-keyword">await</span> allPages.cart.getProductNames();<br>            chai_1.assert.strictEqual(cartProductNames.length, <span class="hljs-number">0</span>, <span class="hljs-string">`Expected all the products have been removed from the cart`</span>);</code></pre>
+          </div>
+        </div>            <div id="bb70d2d1-6372-4fd1-b47e-a20585ae78dd" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              All products can be added to the Cart from product details when &quot;Add to Cart&quot; button is clicked for each one
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#bb70d2d1-6372-4fd1-b47e-a20585ae78dd > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#bb70d2d1-6372-4fd1-b47e-a20585ae78dd > .test-code.collapse">Code </button>
+              <span class="test-duration slow">20.552 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> productNames = <span class="hljs-keyword">await</span> allPages.products.getProductNames();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; productNames.length; i++) {<br>                <span class="hljs-keyword">const</span> productName = productNames[i];<br>                <span class="hljs-keyword">await</span> allPages.products.clickProductByName(productName);<br>                <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>                <span class="hljs-keyword">await</span> allPages.productDetails.addToCart();<br>                <span class="hljs-keyword">await</span> allPages.productDetails.navigateBackToProductsPage();<br>                <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            }<br>            <span class="hljs-keyword">await</span> allPages.products.goToShoppingCart();<br>            <span class="hljs-keyword">const</span> cartProductNames = <span class="hljs-keyword">await</span> allPages.cart.getProductNames();<br>            (<span class="hljs-number">0</span>, chai_1.expect)(productNames).to.deep.equal(cartProductNames, <span class="hljs-string">'Expected all the products to be added to the cart'</span>);</code></pre>
+          </div>
+        </div>            <div id="69bc7df6-106b-4b40-a748-2fe104708635" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              All products can be removed to the Cart from product details when &quot;Remove&quot; button is clicked for each one
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#69bc7df6-106b-4b40-a748-2fe104708635 > .test-logr.collapse">Log </button>
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#69bc7df6-106b-4b40-a748-2fe104708635 > .test-code.collapse">Code </button>
+              <span class="test-duration slow">20.465 s</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>            <span class="hljs-keyword">const</span> productNames = <span class="hljs-keyword">await</span> allPages.products.getProductNames();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; productNames.length; i++) {<br>                <span class="hljs-keyword">const</span> productName = productNames[i];<br>                <span class="hljs-keyword">await</span> allPages.products.clickProductByName(productName);<br>                <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>                <span class="hljs-keyword">await</span> allPages.productDetails.removeFromCart();<br>                <span class="hljs-keyword">await</span> allPages.productDetails.navigateBackToProductsPage();<br>                <span class="hljs-keyword">await</span> seleniumWrappers.waitForPageToLoad();<br>            }<br>            <span class="hljs-keyword">await</span> allPages.products.goToShoppingCart();<br>            <span class="hljs-keyword">const</span> cartProductNames = <span class="hljs-keyword">await</span> allPages.cart.getProductNames();<br>            chai_1.assert.strictEqual(cartProductNames.length, <span class="hljs-number">0</span>, <span class="hljs-string">`Expected all the products have been removed from the cart`</span>);</code></pre>
+          </div>
+        </div>        </div>
+              </div>
+            </div>
+        
+        
+          </div>
+        </section>
+        
+          </div>
+        </section>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>Report generated by <a href="http://adamgruber.github.io/mochawesome/" target="_blank">mochawesome</a>.<br>Designed and built by <a href="https://github.com/adamgruber" target="_blank">adamgruber</a>. &copy;2023.</p>
+      </div>
+    </footer>
+
+    <!-- Nav Menu -->
+    <div class="nav-menu-wrap">
+      <div class="menu-overlay close-menu"></div>
+      <nav class="menu">
+        <button class="nav-menu-btn close-menu"><i class="icon-failed"></i></button>
+        <ul class="list-unstyled main-menu">
+                <li class="nav-menu-item">
+                <a href="#e798b27c-9204-4a1d-9b55-3075d74877a6" class="nav-menu-item-link">Cart page tests</a>
+                  <ul class="list-unstyled sub-menu">
+                    <li class="nav-menu-item">
+                <a href="#22c678a2-ae07-4f64-9bdd-737e8c3d6978" class="nav-menu-item-link has-passes">User is logged out</a>
+            </li>
+                  </ul>
+                  <ul class="list-unstyled sub-menu">
+                    <li class="nav-menu-item">
+                <a href="#469fb82d-c67e-487e-a10a-231e5a9b255d" class="nav-menu-item-link has-passes">User is logged in</a>
+            </li>
+                  </ul>
+            </li>
+                <li class="nav-menu-item">
+                <a href="#bae39ddc-ffb3-4846-8bd4-67123463d8a0" class="nav-menu-item-link has-passes">Footer tests</a>
+            </li>
+                <li class="nav-menu-item">
+                <a href="#a763c6c2-99cd-4501-9357-af929b70870f" class="nav-menu-item-link has-failures">Login page tests</a>
+            </li>
+                <li class="nav-menu-item">
+                <a href="#f7c50c6b-3b35-4c56-ad1a-7cd0155892f5" class="nav-menu-item-link has-failures">Navigation Menu tests</a>
+            </li>
+                <li class="nav-menu-item">
+                <a href="#585974b8-5f1d-46a0-894d-166b19934d35" class="nav-menu-item-link">Products page tests</a>
+                  <ul class="list-unstyled sub-menu">
+                    <li class="nav-menu-item">
+                <a href="#77620914-797d-405c-a673-02e68c71efd3" class="nav-menu-item-link has-passes">User is logged out</a>
+            </li>
+                  </ul>
+                  <ul class="list-unstyled sub-menu">
+                    <li class="nav-menu-item">
+                <a href="#b22199a9-6c31-49e9-bd98-267ba36f7cf6" class="nav-menu-item-link has-passes">User is logged in</a>
+            </li>
+                  </ul>
+            </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/vendor.js"></script>
+    <script src="js/mochawesome.js"></script>
+  </body>
+</html>

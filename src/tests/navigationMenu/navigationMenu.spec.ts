@@ -70,7 +70,30 @@ describe('Navigation Menu tests', function () {
     });
 
     it('Clicking on the "Reset App State" option from the menu deletes all products from cart', async function () {
-        // TODO
+        const productNames = await allPages.products.getProductNames();
+        for (const productName of productNames) {
+            await allPages.products.addToCart(productName);
+            assert(
+                !(await allPages.products.verifyAddToCartButtonExists(productName)),
+                `Expected "Add to cart" button to be replaced with "Remove" button for product "${productName}"`,
+            );
+        }
+        expect(
+            await allPages.products.getShoppingCartBadgeValue(),
+            `Expected shopping cart to contain ${productNames.length} products`,
+        ).to.eq(productNames.length);
+        await allPages.navigationMenu.clickOnResetAppState();
+        await allPages.navigationMenu.closeMenu();
+        expect(
+            await allPages.products.getShoppingCartBadgeValue(),
+            'Expected shopping cart to not contain any products',
+        ).to.eq(0);
+        for (const productName of productNames) {
+            assert(
+                await allPages.products.verifyAddToCartButtonExists(productName),
+                `Expected "Remove" button to be replaced with "Add to cart" button for product "${productName}"`,
+            );
+        }
     });
 
     it('Clicking on the "Logout" option from the menu logs user out and opens Login page', async function () {

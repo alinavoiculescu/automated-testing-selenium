@@ -58,6 +58,17 @@ describe('Products page tests', function () {
             assert(await allPages.products.verifyProductsDisplayedAndVisible(), 'Expected to display all products');
         });
 
+        it('All products have prices greater than 0', async function () {
+            const productNames = await allPages.products.getProductNames();
+            for (const productName of productNames) {
+                const productPrice = await allPages.products.getProductPriceByName(productName);
+                expect(
+                    productPrice,
+                    `Expected price for product "${productName}" (${productPrice}$) to be greater than 0"`,
+                ).to.be.greaterThan(0);
+            }
+        });
+
         it('All products are successfully sorted alphabetically in ascending order when "Name (A to Z)" is selected', async function () {
             const productNames: string[] = await allPages.products.getProductNames();
             const sortedProductNames: string[] = [...productNames].sort();

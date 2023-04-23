@@ -61,6 +61,7 @@ export class NavigationMenu extends Page {
     }
 
     public async clickOnResetAppState() {
+        await this.openMenu();
         const elementResetAppStateOption = await this.webDriver.wait(until.elementLocated(this.optionResetAppState));
         await this.seleniumWrappers.scrollToElement(elementResetAppStateOption);
         await this.seleniumWrappers.click(elementResetAppStateOption);
