@@ -8,7 +8,7 @@ import { Footer } from '../../pages/shared/Footer';
 import { Products } from '../../pages/Products';
 import { ProductDetails } from '../../pages/ProductDetails';
 import { Cart } from '../../pages/Cart';
-import { Checkout } from '../../pages/checkout/checkout';
+import { Checkout } from '../../pages/checkout/Checkout';
 import { CheckoutOverview } from '../../pages/checkout/CheckoutOverview';
 import { CheckoutComplete } from '../../pages/checkout/CheckoutComplete';
 
